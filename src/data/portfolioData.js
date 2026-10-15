@@ -39,20 +39,60 @@ export const portfolioData = {
   projects: [
     {
       title: 'OrgChat',
-      description: 'A real-time organizational chat system built for connected teams.',
+      description:
+        'A real-time organizational chat platform that brings team conversations and video calls into one shared workspace.',
+      role: 'Full-stack developer',
+      contribution:
+        'Built the application across the React client and Express API, connecting real-time messaging, persistent PostgreSQL data, and Zegocloud calling.',
       techStack: ['React', 'Express', 'Socket.IO', 'PostgreSQL', 'Prisma', 'Zegocloud'],
+      images: [
+        '/project-shots/orgchat-conversations.svg',
+        '/project-shots/orgchat-channel.svg',
+        '/project-shots/orgchat-call.svg',
+      ],
+      features: [
+        'Real-time team conversations powered by Socket.IO.',
+        'Persistent organizational chat data managed with PostgreSQL and Prisma.',
+        'Integrated video and voice communication using Zegocloud.',
+      ],
     },
     {
       title: 'FormStoreWeb',
       description:
-        'A full-stack restaurant ordering platform with n8n webhooks and PostgreSQL.',
+        'A full-stack restaurant ordering platform connecting a digital menu and order flow with workflow automation.',
+      role: 'Full-stack developer',
+      contribution:
+        'Developed the ordering experience and connected order events to n8n webhooks, with PostgreSQL supporting order data.',
       techStack: ['n8n', 'PostgreSQL'],
+      images: [
+        '/project-shots/formstore-menu.svg',
+        '/project-shots/formstore-cart.svg',
+        '/project-shots/formstore-orders.svg',
+      ],
+      features: [
+        'Restaurant menu and ordering experience for customers.',
+        'Order data persisted in PostgreSQL.',
+        'n8n webhooks connect submitted orders to automated workflows.',
+      ],
     },
     {
       title: 'Recruitment System',
       description:
-        'An applicant tracking system featuring automated document parsing and AI evaluation.',
+        'An applicant tracking system that streamlines candidate intake with automated document parsing and AI-assisted evaluation.',
+      role: 'Full-stack developer',
+      contribution:
+        'Built recruitment workflows that organize applicant information and connect document parsing with AI evaluation.',
       techStack: ['Applicant Tracking', 'Document Parsing', 'AI Evaluation'],
+      images: [
+        '/project-shots/recruitment-candidates.svg',
+        '/project-shots/recruitment-profile.svg',
+        '/project-shots/recruitment-review.svg',
+      ],
+      features: [
+        'Centralized applicant tracking from a recruitment dashboard.',
+        'Automated parsing of candidate documents.',
+        'AI-assisted applicant evaluation to support the review process.',
+      ],
     },
   ],
   skills: [

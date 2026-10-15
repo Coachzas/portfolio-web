@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="720" viewBox="0 0 1200 720">
+  <rect width="1200" height="720" rx="24" fill="#0b1120"/>
+  <rect x="24" y="24" width="1152" height="672" rx="18" fill="#111827"/>
+  <rect x="48" y="48" width="1104" height="552" rx="16" fill="#0f172a"/>
+  <text x="82" y="98" fill="#e2e8f0" font-family="Arial,sans-serif" font-size="21" font-weight="700">Engineering sync</text>
+  <text x="82" y="127" fill="#64748b" font-family="Arial,sans-serif" font-size="14">04 participants · 18:24</text>
+  <rect x="82" y="166" width="490" height="186" rx="13" fill="#172554"/>
+  <circle cx="327" cy="245" r="44" fill="#1d4ed8"/>
+  <text x="327" y="305" fill="#e2e8f0" text-anchor="middle" font-family="Arial,sans-serif" font-size="16">Narin S.</text>
+  <rect x="598" y="166" width="490" height="186" rx="13" fill="#164e63"/>
+  <circle cx="843" cy="245" r="44" fill="#0891b2"/>
+  <text x="843" y="305" fill="#e2e8f0" text-anchor="middle" font-family="Arial,sans-serif" font-size="16">Mali P.</text>
+  <rect x="82" y="374" width="490" height="160" rx="13" fill="#3b0764"/>
+  <circle cx="327" cy="446" r="40" fill="#9333ea"/>
+  <text x="327" y="505" fill="#e2e8f0" text-anchor="middle" font-family="Arial,sans-serif" font-size="16">Pim T.</text>
+  <rect x="598" y="374" width="490" height="160" rx="13" fill="#1f2937"/>
+  <circle cx="843" cy="446" r="40" fill="#475569"/>
+  <text x="843" y="505" fill="#e2e8f0" text-anchor="middle" font-family="Arial,sans-serif" font-size="16">Coach</text>
+  <rect x="435" y="620" width="330" height="50" rx="25" fill="#1e293b"/>
+  <circle cx="477" cy="645" r="13" fill="#475569"/>
+  <circle cx="526" cy="645" r="13" fill="#475569"/>
+  <circle cx="575" cy="645" r="13" fill="#475569"/>
+  <circle cx="724" cy="645" r="17" fill="#ef4444"/>
+</svg>

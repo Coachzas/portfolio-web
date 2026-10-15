@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="720" viewBox="0 0 1200 720">
+  <rect width="1200" height="720" rx="24" fill="#f8fafc"/>
+  <rect x="24" y="24" width="1152" height="672" rx="18" fill="#fffaf3"/>
+  <rect x="24" y="24" width="1152" height="76" rx="18" fill="#ffffff"/>
+  <text x="64" y="73" fill="#c2410c" font-family="Arial,sans-serif" font-size="25" font-weight="700">FormStore</text>
+  <text x="836" y="69" fill="#475569" font-family="Arial,sans-serif" font-size="15">Menu</text>
+  <rect x="920" y="45" width="174" height="39" rx="19" fill="#fff7ed"/>
+  <text x="1007" y="70" fill="#c2410c" text-anchor="middle" font-family="Arial,sans-serif" font-size="14">My orders</text>
+  <text x="70" y="164" fill="#292524" font-family="Arial,sans-serif" font-size="30" font-weight="700">Order tracking</text>
+  <text x="70" y="195" fill="#78716c" font-family="Arial,sans-serif" font-size="14">Your order is being prepared by the kitchen.</text>
+  <rect x="70" y="235" width="1060" height="355" rx="16" fill="#ffffff"/>
+  <rect x="104" y="271" width="992" height="80" rx="11" fill="#fff7ed"/>
+  <text x="133" y="306" fill="#78716c" font-family="Arial,sans-serif" font-size="13">ORDER NUMBER</text>
+  <text x="133" y="334" fill="#292524" font-family="Arial,sans-serif" font-size="19" font-weight="700">#FS-2048</text>
+  <rect x="936" y="292" width="130" height="34" rx="17" fill="#dcfce7"/>
+  <text x="1001" y="314" fill="#15803d" text-anchor="middle" font-family="Arial,sans-serif" font-size="13" font-weight="700">In progress</text>
+  <circle cx="167" cy="424" r="20" fill="#ea580c"/>
+  <circle cx="438" cy="424" r="20" fill="#ea580c"/>
+  <circle cx="709" cy="424" r="20" fill="#e7e5e4"/>
+  <circle cx="980" cy="424" r="20" fill="#e7e5e4"/>
+  <path d="M187 424h231M458 424h231M729 424h231" stroke="#fed7aa" stroke-width="5"/>
+  <text x="167" y="472" fill="#44403c" text-anchor="middle" font-family="Arial,sans-serif" font-size="13">Confirmed</text>
+  <text x="438" y="472" fill="#44403c" text-anchor="middle" font-family="Arial,sans-serif" font-size="13">Preparing</text>
+  <text x="709" y="472" fill="#a8a29e" text-anchor="middle" font-family="Arial,sans-serif" font-size="13">On the way</text>
+  <text x="980" y="472" fill="#a8a29e" text-anchor="middle" font-family="Arial,sans-serif" font-size="13">Delivered</text>
+  <text x="132" y="545" fill="#78716c" font-family="Arial,sans-serif" font-size="14">We'll notify you when your order is ready.</text>
+</svg>

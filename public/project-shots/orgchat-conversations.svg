@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="720" viewBox="0 0 1200 720">
+  <rect width="1200" height="720" rx="24" fill="#0b1120"/>
+  <rect x="24" y="24" width="1152" height="672" rx="18" fill="#111827"/>
+  <rect x="24" y="24" width="250" height="672" rx="18" fill="#0f172a"/>
+  <text x="58" y="78" fill="#c4b5fd" font-family="Arial,sans-serif" font-size="27" font-weight="700">OrgChat</text>
+  <rect x="48" y="108" width="202" height="42" rx="9" fill="#1e293b"/>
+  <text x="68" y="135" fill="#94a3b8" font-family="Arial,sans-serif" font-size="15">Search messages</text>
+  <text x="52" y="198" fill="#64748b" font-family="Arial,sans-serif" font-size="14" font-weight="700">WORKSPACE</text>
+  <rect x="44" y="216" width="206" height="45" rx="9" fill="#312e81"/>
+  <circle cx="68" cy="238" r="7" fill="#a78bfa"/>
+  <text x="88" y="244" fill="#e2e8f0" font-family="Arial,sans-serif" font-size="16"># general</text>
+  <text x="68" y="299" fill="#94a3b8" font-family="Arial,sans-serif" font-size="16"># engineering</text>
+  <text x="68" y="342" fill="#94a3b8" font-family="Arial,sans-serif" font-size="16"># announcements</text>
+  <text x="52" y="408" fill="#64748b" font-family="Arial,sans-serif" font-size="14" font-weight="700">DIRECT MESSAGES</text>
+  <circle cx="65" cy="448" r="13" fill="#0ea5e9"/>
+  <text x="88" y="454" fill="#cbd5e1" font-family="Arial,sans-serif" font-size="15">Narin S.</text>
+  <circle cx="65" cy="491" r="13" fill="#34d399"/>
+  <text x="88" y="497" fill="#cbd5e1" font-family="Arial,sans-serif" font-size="15">Mali P.</text>
+  <text x="318" y="77" fill="#f8fafc" font-family="Arial,sans-serif" font-size="22" font-weight="700"># general</text>
+  <text x="318" y="105" fill="#64748b" font-family="Arial,sans-serif" font-size="14">Team conversation · 12 members</text>
+  <path d="M300 126h840" stroke="#263244"/>
+  <circle cx="338" cy="174" r="19" fill="#0ea5e9"/>
+  <text x="374" y="170" fill="#e2e8f0" font-family="Arial,sans-serif" font-size="16" font-weight="700">Narin S.</text>
+  <text x="374" y="196" fill="#64748b" font-family="Arial,sans-serif" font-size="12">10:42 AM</text>
+  <text x="374" y="228" fill="#cbd5e1" font-family="Arial,sans-serif" font-size="15">Morning team! The new dashboard is ready for review.</text>
+  <circle cx="338" cy="288" r="19" fill="#34d399"/>
+  <text x="374" y="284" fill="#e2e8f0" font-family="Arial,sans-serif" font-size="16" font-weight="700">Mali P.</text>
+  <text x="374" y="310" fill="#64748b" font-family="Arial,sans-serif" font-size="12">10:45 AM</text>
+  <text x="374" y="342" fill="#cbd5e1" font-family="Arial,sans-serif" font-size="15">Looks great! I'll add my notes to the project channel.</text>
+  <rect x="318" y="566" width="820" height="68" rx="12" fill="#0f172a" stroke="#334155"/>
+  <text x="344" y="607" fill="#64748b" font-family="Arial,sans-serif" font-size="15">Message #general...</text>
+</svg>
