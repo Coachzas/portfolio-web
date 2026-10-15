@@ -1,5 +1,7 @@
 import { useState } from 'react';
+import { Moon, Sun } from 'lucide-react';
 import Icon from './Icon';
+import { useTheme } from '../context/useTheme';
 
 const links = [
   { label: 'Home', href: '#hero' },
@@ -11,6 +13,7 @@ const links = [
 
 function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const { theme, toggleTheme } = useTheme();
 
   return (
     <header className="site-header fixed top-0 left-0 right-0 z-50 bg-slate-900/80 backdrop-blur-md border-b border-slate-800">
@@ -42,6 +45,16 @@ function Navbar() {
               {link.label}
             </a>
           ))}
+          <button
+            aria-label={`Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`}
+            className="theme-toggle"
+            onClick={toggleTheme}
+            title={`Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`}
+            type="button"
+          >
+            {theme === 'dark' ? <Sun size={18} /> : <Moon size={18} />}
+            <span>{theme === 'dark' ? 'Light mode' : 'Dark mode'}</span>
+          </button>
         </div>
       </nav>
     </header>
