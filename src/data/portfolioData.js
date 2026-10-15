@@ -1,13 +1,16 @@
+const emailAddress = 'tirawat.cod01@gmail.com';
+
 export const portfolioData = {
   personal: {
     name: 'Coach',
     title: 'Full-stack & DevOps Developer',
+    email: emailAddress,
     education: 'B.S. Computer Science, Kasetsart University Kamphaeng Saen Campus',
     bio: 'I build full-stack products and practical automation, connecting thoughtful user experiences with reliable backend systems.',
     socialLinks: [
       { name: 'GitHub', href: 'https://github.com/', icon: 'github' },
       { name: 'LinkedIn', href: 'https://www.linkedin.com/', icon: 'linkedin' },
-      { name: 'Email', href: 'mailto:coach@example.com', icon: 'mail' },
+      { name: 'Email', href: `mailto:${emailAddress}`, icon: 'mail' },
     ],
   },
   experiences: [

@@ -1,8 +1,10 @@
 import { portfolioData } from '../data/portfolioData';
 import Icon from './Icon';
+import useEmailCopy from './useEmailCopy';
 
 function Hero() {
   const { personal } = portfolioData;
+  const { copyEmail, copyStatus } = useEmailCopy(personal.email);
 
   return (
     <section className="hero-section content-width" id="hero">
@@ -25,17 +27,31 @@ function Hero() {
         </div>
         <div className="social-links" aria-label="Social links">
           {personal.socialLinks.map((link) => (
-            <a
-              key={link.name}
-              href={link.href}
-              aria-label={link.name}
-              title={link.name}
-              target={link.href.startsWith('http') ? '_blank' : undefined}
-              rel={link.href.startsWith('http') ? 'noreferrer' : undefined}
-            >
-              <Icon name={link.icon} size={19} />
-            </a>
+            link.icon === 'mail' ? (
+              <button
+                className="social-link-button"
+                key={link.name}
+                type="button"
+                aria-label="Copy email address"
+                title="Copy email address"
+                onClick={copyEmail}
+              >
+                <Icon name={link.icon} size={19} />
+              </button>
+            ) : (
+              <a
+                key={link.name}
+                href={link.href}
+                aria-label={link.name}
+                title={link.name}
+                target={link.href.startsWith('http') ? '_blank' : undefined}
+                rel={link.href.startsWith('http') ? 'noreferrer' : undefined}
+              >
+                <Icon name={link.icon} size={19} />
+              </a>
+            )
           ))}
+          {copyStatus && <span className="copy-notification" role="status">{copyStatus}</span>}
         </div>
       </div>
       <div className="hero-art" aria-hidden="true">

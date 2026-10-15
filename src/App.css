@@ -206,21 +206,56 @@
   margin-top: 28px;
 }
 
-.social-links a {
+.social-links a,
+.social-links .social-link-button {
   display: grid;
   width: 38px;
   height: 38px;
   place-items: center;
   border: 1px solid rgb(148 163 184 / 14%);
   border-radius: 10px;
+  background: transparent;
   color: #94a3b8;
+  cursor: pointer;
   transition: color 160ms ease, border-color 160ms ease, background 160ms ease;
 }
 
-.social-links a:hover {
+.social-links a:hover,
+.social-links .social-link-button:hover {
   border-color: rgb(167 139 250 / 45%);
   background: rgb(124 58 237 / 12%);
   color: #c4b5fd;
+}
+
+.copy-notification {
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 11px;
+  border: 1px solid rgb(52 211 153 / 25%);
+  border-radius: 8px;
+  background: rgb(6 78 59 / 75%);
+  color: #a7f3d0;
+  font-size: 12px;
+  animation: notification-in 160ms ease-out;
+}
+
+.footer-email {
+  border: 0;
+  padding-inline: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+@keyframes notification-in {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .hero-art {
