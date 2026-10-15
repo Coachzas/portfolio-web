@@ -1,17 +1,21 @@
 import './App.css';
-import { Navbar, Hero, About, Skills, Projects, Contact, Footer } from './components/Layout';
+import Experience from './components/Experience';
+import Footer from './components/Footer';
+import Hero from './components/Hero';
+import Navbar from './components/Navbar';
+import Projects from './components/Projects';
+import Skills from './components/Skills';
 
 function App() {
   return (
-    <>
+    <div className="app-shell min-h-screen bg-slate-950 text-slate-100">
       <Navbar />
       <Hero />
-      <About />
-      <Skills />
+      <Experience />
       <Projects />
-      <Contact />
+      <Skills />
       <Footer />
-    </>
+    </div>
   );
 }
 
