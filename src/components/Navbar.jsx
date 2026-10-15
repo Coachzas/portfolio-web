@@ -13,7 +13,7 @@ function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <header className="site-header">
+    <header className="site-header fixed top-0 left-0 right-0 z-50 bg-slate-900/80 backdrop-blur-md border-b border-slate-800">
       <nav className="navbar content-width" aria-label="Main navigation">
         <a className="brand" href="#hero" onClick={() => setMenuOpen(false)}>
           <span className="brand-mark">C</span>

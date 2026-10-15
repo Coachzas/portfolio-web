@@ -16,12 +16,14 @@
 }
 
 .site-header {
-  position: sticky;
-  z-index: 10;
+  position: fixed;
+  z-index: 50;
   top: 0;
-  border-bottom: 1px solid rgb(148 163 184 / 10%);
-  background: rgb(2 6 23 / 82%);
-  backdrop-filter: blur(18px);
+  right: 0;
+  left: 0;
+  border-bottom: 1px solid #1e293b;
+  background: rgb(15 23 42 / 80%);
+  backdrop-filter: blur(12px);
 }
 
 .navbar {
@@ -86,7 +88,7 @@
   grid-template-columns: 1.1fr 0.9fr;
   align-items: center;
   gap: 52px;
-  padding-block: 82px 112px;
+  padding-block: 162px 112px;
 }
 
 .hero-copy {
@@ -712,7 +714,7 @@
     min-height: auto;
     grid-template-columns: 1fr;
     gap: 4px;
-    padding-block: 86px 40px;
+    padding-block: 152px 40px;
   }
 
   .hero-section h1 {
