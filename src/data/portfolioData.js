@@ -8,16 +8,50 @@ const socialLinks = [
 
 const skills = [
   {
-    category: { en: 'Frontend', th: 'การพัฒนาส่วนหน้า' },
-    items: ['React', 'JavaScript', 'HTML', 'CSS', 'Tailwind CSS'],
+    category: { en: 'Frontend', th: 'ส่วนหน้า' },
+    items: [
+      { name: 'React', icon: 'react' },
+      { name: 'JavaScript', icon: 'javascript' },
+      { name: 'HTML5', icon: 'html5' },
+      { name: 'CSS', icon: 'css' },
+      { name: 'Tailwind CSS', icon: 'tailwindcss' },
+    ],
   },
   {
-    category: { en: 'Backend & Database', th: 'ระบบหลังบ้านและฐานข้อมูล' },
-    items: ['Node.js', 'Express', 'PostgreSQL', 'Prisma', 'REST APIs', 'Socket.IO', 'Zegocloud'],
+    category: { en: 'Backend', th: 'ระบบหลังบ้าน' },
+    items: [
+      { name: 'Node.js', icon: 'nodedotjs' },
+      { name: 'Express', icon: 'express' },
+      { name: 'REST APIs', icon: 'rest-api' },
+      { name: 'Socket.IO', icon: 'socketdotio' },
+      { name: 'Zegocloud', icon: 'zegocloud' },
+    ],
   },
   {
-    category: { en: 'DevOps & Tools', th: 'DevOps และเครื่องมือ' },
-    items: ['Docker', 'n8n', 'Git', 'Gemini API', 'Claude API', 'Postman', 'Vercel', 'Vite'],
+    category: { en: 'Database', th: 'ฐานข้อมูล' },
+    items: [
+      { name: 'PostgreSQL', icon: 'postgresql' },
+      { name: 'Prisma', icon: 'prisma' },
+    ],
+  },
+  {
+    category: { en: 'DevOps', th: 'DevOps' },
+    items: [
+      { name: 'Docker', icon: 'docker' },
+      { name: 'Vercel', icon: 'vercel' },
+      { name: 'n8n', icon: 'n8n' },
+    ],
+  },
+  {
+    category: { en: 'Tools', th: 'เครื่องมือ' },
+    items: [
+      { name: 'Git', icon: 'git' },
+      { name: 'Postman', icon: 'postman' },
+      { name: 'VS Code', icon: 'vscode' },
+      { name: 'Vite', icon: 'vite' },
+      { name: 'Gemini API', icon: 'googlegemini' },
+      { name: 'Claude API', icon: 'claude' },
+    ],
   },
 ];
 
@@ -28,7 +62,7 @@ const projects = [
       en: 'An applicant tracking system that streamlines candidate intake with automated document parsing and AI-assisted evaluation.',
       th: 'ระบบติดตามผู้สมัครที่ช่วยให้การรับสมัครมีประสิทธิภาพยิ่งขึ้นด้วยการดึงข้อมูลจากเอกสารอัตโนมัติและการประเมินด้วย AI',
     },
-    role: { en: 'Full-stack developer', th: 'นักพัฒนา Full-stack' },
+    role: { en: 'Full-stack Web Developer', th: 'นักพัฒนาเว็บ Full-stack' },
     contribution: {
       en: 'Built recruitment workflows that organize applicant information and connect document parsing with AI evaluation.',
       th: 'พัฒนาเวิร์กโฟลว์การสรรหาเพื่อจัดระเบียบข้อมูลผู้สมัคร และเชื่อมการดึงข้อมูลจากเอกสารเข้ากับการประเมินด้วย AI',
@@ -55,10 +89,10 @@ const projects = [
   {
     title: { en: 'FormStoreWeb', th: 'FormStoreWeb' },
     description: {
-      en: 'A full-stack restaurant ordering platform connecting a digital menu and order flow with workflow automation.',
-      th: 'แพลตฟอร์มสั่งอาหารแบบ Full-stack ที่เชื่อมต่อเมนูดิจิทัลและขั้นตอนการสั่งอาหารเข้ากับระบบเวิร์กโฟลว์อัตโนมัติ',
+      en: 'A full-stack web ordering platform connecting a digital menu and order flow with workflow automation.',
+      th: 'แพลตฟอร์มเว็บสั่งอาหารแบบ Full-stack ที่เชื่อมต่อเมนูดิจิทัลและขั้นตอนการสั่งอาหารเข้ากับระบบเวิร์กโฟลว์อัตโนมัติ',
     },
-    role: { en: 'Full-stack developer', th: 'นักพัฒนา Full-stack' },
+    role: { en: 'Full-stack Web Developer', th: 'นักพัฒนาเว็บ Full-stack' },
     contribution: {
       en: 'Developed the ordering experience and connected order events to n8n webhooks, with PostgreSQL supporting order data.',
       th: 'พัฒนาประสบการณ์การสั่งอาหารและเชื่อมต่อเหตุการณ์คำสั่งซื้อกับ n8n webhooks โดยใช้ PostgreSQL จัดเก็บข้อมูลคำสั่งซื้อ',
@@ -88,7 +122,7 @@ const projects = [
       en: 'A real-time organizational chat platform that brings team conversations and video calls into one shared workspace.',
       th: 'แพลตฟอร์มแชตองค์กรแบบเรียลไทม์ที่รวมการสนทนาของทีมและวิดีโอคอลไว้ในพื้นที่ทำงานเดียวกัน',
     },
-    role: { en: 'Full-stack developer', th: 'นักพัฒนา Full-stack' },
+    role: { en: 'Full-stack Web Developer', th: 'นักพัฒนาเว็บ Full-stack' },
     contribution: {
       en: 'Built the application across the React client and Express API, connecting real-time messaging, persistent PostgreSQL data, and Zegocloud calling.',
       th: 'พัฒนาแอปพลิเคชันทั้งฝั่ง React และ Express API เชื่อมต่อการส่งข้อความแบบเรียลไทม์ ฐานข้อมูล PostgreSQL และระบบโทรผ่าน Zegocloud',
@@ -142,10 +176,10 @@ export const portfolioData = {
     ...sharedData,
     personal: {
       name: 'Tirawat Pisut',
-      title: 'Full-stack & DevOps Developer',
+      title: 'Full-stack Web Developer & DevOps Engineer',
       email: emailAddress,
       education: 'B.S. Computer Science, Kasetsart University Kamphaeng Saen Campus',
-      bio: 'I build full-stack products and practical automation, connecting thoughtful user experiences with reliable backend systems.',
+      bio: 'I build full-stack web applications and practical automation, connecting thoughtful user experiences with reliable backend systems.',
       socialLinks,
     },
     navbar: {
@@ -158,8 +192,9 @@ export const portfolioData = {
       ],
     },
     hero: {
-      tagline: 'Full-stack · DevOps · Automation',
+      tagline: 'Full-stack Web · DevOps · Automation',
       greeting: "Hi, I'm",
+      nickname: 'Coach',
       projectsLink: 'Explore my work',
       contactLink: 'Get in touch',
       emailCopyLabel: 'Copy email address',
@@ -174,7 +209,7 @@ export const portfolioData = {
       title: 'Experience',
       items: [
         {
-          role: 'Full-stack & DevOps Developer (Cooperative Education / Internship)',
+          role: 'Full-stack Web Developer & DevOps Engineer (Cooperative Education / Internship)',
           description:
             'Developed an Email Automation & AI OCR Pipeline to parse document data and streamline workflows.',
           highlights: [
@@ -229,10 +264,10 @@ export const portfolioData = {
     ...sharedData,
     personal: {
       name: 'ถิรวัฒน์ พิสุทธิ์',
-      title: 'นักพัฒนา Full-stack และ DevOps',
+      title: 'นักพัฒนาเว็บ Full-stack และ DevOps',
       email: emailAddress,
       education: 'วิทยาศาสตรบัณฑิต สาขาวิทยาการคอมพิวเตอร์ มหาวิทยาลัยเกษตรศาสตร์ วิทยาเขตกำแพงแสน',
-      bio: 'ผมพัฒนาผลิตภัณฑ์ Full-stack และระบบอัตโนมัติที่ใช้งานได้จริง โดยเชื่อมประสบการณ์ผู้ใช้ที่ใส่ใจรายละเอียดเข้ากับระบบหลังบ้านที่เชื่อถือได้',
+      bio: 'ผมพัฒนาเว็บแอปพลิเคชันและระบบอัตโนมัติที่ใช้งานได้จริง โดยเชื่อมประสบการณ์ผู้ใช้ที่ใส่ใจรายละเอียดเข้ากับระบบหลังบ้านที่เชื่อถือได้',
       socialLinks,
     },
     navbar: {
@@ -245,8 +280,9 @@ export const portfolioData = {
       ],
     },
     hero: {
-      tagline: 'Full-stack · DevOps · ระบบอัตโนมัติ',
+      tagline: 'Full-stack Web · DevOps · ระบบอัตโนมัติ',
       greeting: 'สวัสดีครับ ผม',
+      nickname: 'โค้ช',
       projectsLink: 'ดูผลงานของผม',
       contactLink: 'ติดต่อผม',
       emailCopyLabel: 'คัดลอกอีเมล',
@@ -261,7 +297,7 @@ export const portfolioData = {
       title: 'ประสบการณ์',
       items: [
         {
-          role: 'นักพัฒนา Full-stack และ DevOps (สหกิจศึกษา / ฝึกงาน)',
+          role: 'นักพัฒนาเว็บ Full-stack และ DevOps (สหกิจศึกษา / ฝึกงาน)',
           description:
             'พัฒนาระบบอัตโนมัติสำหรับอีเมลและ AI OCR เพื่อดึงข้อมูลจากเอกสารและปรับปรุงขั้นตอนการทำงานให้มีประสิทธิภาพ',
           highlights: [

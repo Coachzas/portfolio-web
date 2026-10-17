@@ -13,9 +13,11 @@ function Hero() {
     <section className="hero-section content-width" id="hero">
       <div className="hero-copy">
         <p className="eyebrow"><span className="status-dot" /> {hero.tagline}</p>
-        <h1>
-          {hero.greeting} <span className="gradient-text">{personal.name}</span>
-          <br />
+        <h1 className={`hero-heading hero-heading-${language}`}>
+          <span className="hero-greeting">
+            {hero.greeting} <span className="hero-nickname gradient-text">{hero.nickname}</span>
+          </span>
+          <span className="hero-name gradient-text">{personal.name}</span>
           <span className="hero-title">{personal.title}</span>
         </h1>
         <p className="hero-bio">{personal.bio}</p>
