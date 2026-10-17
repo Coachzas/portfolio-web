@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 
-function useEmailCopy(email) {
+function useEmailCopy(email, messages) {
   const [copyStatus, setCopyStatus] = useState('');
   const timeoutRef = useRef(null);
 
@@ -11,15 +11,15 @@ function useEmailCopy(email) {
       }
 
       await navigator.clipboard.writeText(email);
-      setCopyStatus('คัดลอกอีเมลแล้ว!');
+      setCopyStatus(messages.emailCopied);
     } catch (error) {
       console.error('Unable to copy email address:', error);
-      setCopyStatus('คัดลอกอีเมลไม่สำเร็จ');
+      setCopyStatus(messages.emailCopyFailed);
     }
 
     window.clearTimeout(timeoutRef.current);
     timeoutRef.current = window.setTimeout(() => setCopyStatus(''), 2000);
-  }, [email]);
+  }, [email, messages.emailCopied, messages.emailCopyFailed]);
 
   useEffect(
     () => () => {

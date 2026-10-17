@@ -1,8 +1,9 @@
 import { useEffect, useRef, useState } from 'react';
 import { portfolioData } from '../data/portfolioData';
 import Icon from './Icon';
+import { useLanguage } from '../context/useLanguage';
 
-function ProjectModal({ project, onClose, triggerRef }) {
+function ProjectModal({ project, ui, onClose, triggerRef }) {
   const [activeImage, setActiveImage] = useState(0);
   const dialogRef = useRef(null);
   const image = project.images[activeImage];
@@ -68,7 +69,7 @@ function ProjectModal({ project, onClose, triggerRef }) {
         tabIndex={-1}
       >
         <button
-          aria-label="Close project details"
+          aria-label={ui.closeProject}
           className="project-modal-close"
           onClick={onClose}
           type="button"
@@ -77,11 +78,11 @@ function ProjectModal({ project, onClose, triggerRef }) {
         </button>
 
         <div className="project-carousel">
-          <img className="project-carousel-image" src={image} alt={`${project.title} preview ${activeImage + 1}`} />
+          <img className="project-carousel-image" src={image} alt={`${project.title} - ${ui.showScreenshot} ${activeImage + 1}`} />
           {project.images.length > 1 && (
             <>
               <button
-                aria-label="Previous screenshot"
+                aria-label={ui.previousScreenshot}
                 className="carousel-arrow carousel-arrow-left"
                 onClick={() => changeImage(-1)}
                 type="button"
@@ -89,18 +90,18 @@ function ProjectModal({ project, onClose, triggerRef }) {
                 <Icon name="chevron-left" />
               </button>
               <button
-                aria-label="Next screenshot"
+                aria-label={ui.nextScreenshot}
                 className="carousel-arrow carousel-arrow-right"
                 onClick={() => changeImage(1)}
                 type="button"
               >
                 <Icon name="chevron-right" />
               </button>
-              <div aria-label="Choose screenshot" className="carousel-dots">
+              <div aria-label={ui.chooseScreenshot} className="carousel-dots">
                 {project.images.map((screenshot, index) => (
                   <button
                     aria-current={index === activeImage ? 'true' : undefined}
-                    aria-label={`Show screenshot ${index + 1}`}
+                    aria-label={`${ui.showScreenshot} ${index + 1}`}
                     className={`carousel-dot${index === activeImage ? ' carousel-dot-active' : ''}`}
                     key={screenshot}
                     onClick={() => setActiveImage(index)}
@@ -114,24 +115,24 @@ function ProjectModal({ project, onClose, triggerRef }) {
         </div>
 
         <div className="project-modal-content">
-          <p className="eyebrow">Project details</p>
+          <p className="eyebrow">{ui.projectDetails}</p>
           <h2 id="project-modal-title">{project.title}</h2>
           <p className="project-modal-description">{project.description}</p>
 
           <div className="project-detail-block">
-            <h3>Role &amp; Contribution</h3>
-            <p><strong>{project.role}.</strong> {project.contribution}</p>
+            <h3>{ui.roleContribution}</h3>
+            <p><strong>{project.role}</strong>{ui.roleContributionSeparator}{project.contribution}</p>
           </div>
 
           <div className="project-detail-block">
-            <h3>Key Features</h3>
+            <h3>{ui.keyFeatures}</h3>
             <ul className="project-feature-list">
               {project.features.map((feature) => <li key={feature}>{feature}</li>)}
             </ul>
           </div>
 
           <div className="project-detail-block">
-            <h3>Tech Stack</h3>
+            <h3>{ui.techStack}</h3>
             <div className="tag-list">
               {project.techStack.map((tech) => (
                 <span className="tech-tag" key={tech}>{tech}</span>
@@ -145,27 +146,29 @@ function ProjectModal({ project, onClose, triggerRef }) {
 }
 
 function Projects() {
-  const [activeProject, setActiveProject] = useState(null);
+  const [activeProjectIndex, setActiveProjectIndex] = useState(null);
+  const { language } = useLanguage();
+  const { projects, projectsSection, ui } = portfolioData[language];
   const triggerRef = useRef(null);
-  const closeModal = () => setActiveProject(null);
+  const closeModal = () => setActiveProjectIndex(null);
 
   function openProject(project, event) {
     triggerRef.current = event.currentTarget;
-    setActiveProject(project);
+    setActiveProjectIndex(projects.indexOf(project));
   }
 
   return (
     <section className="section section-tinted" id="projects">
       <div className="content-width">
         <div className="section-heading">
-          <p className="eyebrow">Selected work</p>
-          <h2>Projects<span className="brand-period">.</span></h2>
+          <p className="eyebrow">{projectsSection.heading}</p>
+          <h2>{projectsSection.title}<span className="brand-period">.</span></h2>
           <p className="section-intro">
-            A few projects where software, automation, and useful ideas come together.
+            {projectsSection.intro}
           </p>
         </div>
         <div className="project-grid">
-          {portfolioData.projects.map((project, index) => (
+          {projects.map((project, index) => (
             <button
               aria-haspopup="dialog"
               className="project-card project-card-button panel"
@@ -182,18 +185,19 @@ function Projects() {
                 ))}
               </span>
               <span className="project-link">
-                View project details <span aria-hidden="true">↗</span>
+                {projectsSection.viewDetails} <span aria-hidden="true">↗</span>
               </span>
             </button>
           ))}
         </div>
       </div>
-      {activeProject && (
+      {activeProjectIndex !== null && (
         <ProjectModal
-          key={activeProject.title}
+          key={projects[activeProjectIndex].title}
           onClose={closeModal}
-          project={activeProject}
+          project={projects[activeProjectIndex]}
           triggerRef={triggerRef}
+          ui={ui}
         />
       )}
     </section>

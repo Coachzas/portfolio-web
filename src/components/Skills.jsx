@@ -1,14 +1,17 @@
 import { portfolioData } from '../data/portfolioData';
+import { useLanguage } from '../context/useLanguage';
 
 function Skills() {
+  const { language } = useLanguage();
+  const { skillsSection, skills } = portfolioData[language];
   return (
     <section className="section content-width" id="skills">
       <div className="section-heading">
-        <p className="eyebrow">Tools of the trade</p>
-        <h2>Skills<span className="brand-period">.</span></h2>
+        <p className="eyebrow">{skillsSection.heading}</p>
+        <h2>{skillsSection.title}<span className="brand-period">.</span></h2>
       </div>
       <div className="skills-grid">
-        {portfolioData.skills.map((group, index) => (
+        {skills.map((group, index) => (
           <article className="skill-group panel" key={group.category}>
             <div className="skill-group-heading">
               <span className="skill-index">0{index + 1}</span>

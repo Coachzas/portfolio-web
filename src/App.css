@@ -97,6 +97,48 @@
   color: #c4b5fd;
 }
 
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.language-switcher {
+  display: inline-flex;
+  align-items: center;
+  padding: 3px;
+  border: 1px solid rgb(148 163 184 / 18%);
+  border-radius: 999px;
+  background: rgb(30 41 59 / 65%);
+}
+
+.language-option {
+  min-width: 34px;
+  min-height: 30px;
+  padding: 0 8px;
+  border: 0;
+  border-radius: 999px;
+  background: transparent;
+  color: #94a3b8;
+  font-size: 11px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: color 180ms ease, background 180ms ease;
+}
+
+.language-option:hover {
+  color: #e2e8f0;
+}
+
+.language-option-active {
+  background: #7c3aed;
+  color: #fff;
+}
+
+.language-option-active:hover {
+  color: #fff;
+}
+
 .menu-toggle {
   display: none;
   border: 0;
@@ -1021,6 +1063,11 @@
     border-bottom: 0;
   }
 
+  .nav-actions {
+    align-self: flex-start;
+    margin-top: 14px;
+  }
+
   .hero-section {
     min-height: auto;
     grid-template-columns: 1fr;
@@ -1162,6 +1209,24 @@ html.light .theme-toggle:hover {
   border-color: #a78bfa;
   background: #f5f3ff;
   color: #6d28d9;
+}
+
+html.light .language-switcher {
+  border-color: #cbd5e1;
+  background: rgb(255 255 255 / 80%);
+}
+
+html.light .language-option {
+  color: #64748b;
+}
+
+html.light .language-option:hover {
+  color: #0f172a;
+}
+
+html.light .language-option-active,
+html.light .language-option-active:hover {
+  color: #fff;
 }
 
 html.light .menu-toggle {

@@ -1,17 +1,20 @@
 import { portfolioData } from '../data/portfolioData';
 import Icon from './Icon';
 import useEmailCopy from './useEmailCopy';
+import { useLanguage } from '../context/useLanguage';
 
 function Hero() {
-  const { personal } = portfolioData;
-  const { copyEmail, copyStatus } = useEmailCopy(personal.email);
+  const { language } = useLanguage();
+  const content = portfolioData[language];
+  const { personal, hero, ui } = content;
+  const { copyEmail, copyStatus } = useEmailCopy(personal.email, ui);
 
   return (
     <section className="hero-section content-width" id="hero">
       <div className="hero-copy">
-        <p className="eyebrow"><span className="status-dot" /> Full-stack · DevOps · Automation</p>
+        <p className="eyebrow"><span className="status-dot" /> {hero.tagline}</p>
         <h1>
-          Hi, I&apos;m <span className="gradient-text">{personal.name}</span>
+          {hero.greeting} <span className="gradient-text">{personal.name}</span>
           <br />
           <span className="hero-title">{personal.title}</span>
         </h1>
@@ -19,10 +22,10 @@ function Hero() {
         <p className="hero-education">{personal.education}</p>
         <div className="hero-actions">
           <a className="button button-primary" href="#projects">
-            Explore my work <Icon name="arrow" size={17} />
+            {hero.projectsLink} <Icon name="arrow" size={17} />
           </a>
           <a className="button button-secondary" href="#contact">
-            Get in touch
+            {hero.contactLink}
           </a>
         </div>
         <div className="social-links" aria-label="Social links">
@@ -32,8 +35,8 @@ function Hero() {
                 className="social-link-button"
                 key={link.name}
                 type="button"
-                aria-label="Copy email address"
-                title="Copy email address"
+                aria-label={hero.emailCopyLabel}
+                title={hero.emailCopyLabel}
                 onClick={copyEmail}
               >
                 <Icon name={link.icon} size={19} />
@@ -62,9 +65,9 @@ function Hero() {
           <div className="code-card-top"><span /><span /><span /></div>
           <div className="code-lines">
             <span><i>const</i> developer = {'{'}</span>
-            <span className="code-indent">build: <b>&quot;web apps&quot;</b>,</span>
-            <span className="code-indent">automate: <b>&quot;workflows&quot;</b>,</span>
-            <span className="code-indent">deploy: <b>&quot;with care&quot;</b></span>
+            <span className="code-indent">build: <b>&quot;{hero.code.build}&quot;</b>,</span>
+            <span className="code-indent">automate: <b>&quot;{hero.code.automate}&quot;</b>,</span>
+            <span className="code-indent">deploy: <b>&quot;{hero.code.deploy}&quot;</b></span>
             <span>{'}'};</span>
             <span className="code-cursor">▌</span>
           </div>
