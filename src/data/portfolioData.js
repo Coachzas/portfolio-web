@@ -13,11 +13,11 @@ const skills = [
   },
   {
     category: { en: 'Backend & Database', th: 'ระบบหลังบ้านและฐานข้อมูล' },
-    items: ['Node.js', 'Express', 'PostgreSQL', 'Prisma', 'REST APIs'],
+    items: ['Node.js', 'Express', 'PostgreSQL', 'Prisma', 'REST APIs', 'Socket.IO', 'Zegocloud'],
   },
   {
     category: { en: 'DevOps & Tools', th: 'DevOps และเครื่องมือ' },
-    items: ['Docker', 'n8n', 'Git', 'Gemini API', 'Claude AI'],
+    items: ['Docker', 'n8n', 'Git', 'Gemini API', 'Claude API', 'Postman', 'Vercel', 'Vite'],
   },
 ];
 
@@ -141,7 +141,7 @@ export const portfolioData = {
   en: {
     ...sharedData,
     personal: {
-      name: 'Coach',
+      name: 'Tirawat Pisut',
       title: 'Full-stack & DevOps Developer',
       email: emailAddress,
       education: 'B.S. Computer Science, Kasetsart University Kamphaeng Saen Campus',
@@ -228,7 +228,7 @@ export const portfolioData = {
   th: {
     ...sharedData,
     personal: {
-      name: 'Coach',
+      name: 'ถิรวัฒน์ พิสุทธิ์',
       title: 'นักพัฒนา Full-stack และ DevOps',
       email: emailAddress,
       education: 'วิทยาศาสตรบัณฑิต สาขาวิทยาการคอมพิวเตอร์ มหาวิทยาลัยเกษตรศาสตร์ วิทยาเขตกำแพงแสน',

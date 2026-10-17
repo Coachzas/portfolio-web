@@ -35,27 +35,21 @@
 
 .brand {
   display: inline-flex;
+  flex-shrink: 0;
   align-items: center;
   gap: 10px;
   color: #f8fafc;
   font-size: 17px;
   font-weight: 700;
   letter-spacing: -0.04em;
+  white-space: nowrap;
 }
 
-.brand-mark {
-  display: grid;
-  width: 34px;
-  height: 34px;
-  place-items: center;
-  border: 1px solid rgb(167 139 250 / 45%);
-  border-radius: 11px;
-  background: linear-gradient(145deg, rgb(124 58 237 / 30%), rgb(14 165 233 / 15%));
-  color: #c4b5fd;
-}
-
-.brand-period {
-  color: #a78bfa;
+.brand-logo {
+  width: 36px;
+  height: 36px;
+  flex-shrink: 0;
+  object-fit: contain;
 }
 
 .nav-links {
