@@ -69,9 +69,14 @@ const projects = [
     },
     techStack: ['Applicant Tracking', 'Document Parsing', 'AI Evaluation'],
     images: [
-      '/project-shots/recruitment-candidates.svg',
-      '/project-shots/recruitment-profile.svg',
-      '/project-shots/recruitment-review.svg',
+      '/project-shots/Fetch0.png',
+      '/project-shots/Applicants.png',
+      '/project-shots/ApplicantsView.png',
+      '/project-shots/Criteria.png',
+      '/project-shots/Connections.png',
+      '/project-shots/AIsetting.png',
+      '/project-shots/Scheduler.png',
+      '/project-shots/SchedulerSetting.png',
     ],
     features: {
       en: [
@@ -253,6 +258,7 @@ export const portfolioData = {
       nextScreenshot: 'Next screenshot',
       chooseScreenshot: 'Choose screenshot',
       showScreenshot: 'Show screenshot',
+      screenshotUnavailable: 'Screenshot unavailable',
       projectDetails: 'Project details',
       roleContribution: 'Role & Contribution',
       roleContributionSeparator: '. ',
@@ -341,6 +347,7 @@ export const portfolioData = {
       nextScreenshot: 'ภาพหน้าจอถัดไป',
       chooseScreenshot: 'เลือกภาพหน้าจอ',
       showScreenshot: 'แสดงภาพหน้าจอ',
+      screenshotUnavailable: 'ไม่สามารถแสดงภาพหน้าจอได้',
       projectDetails: 'รายละเอียดผลงาน',
       roleContribution: 'บทบาทและสิ่งที่พัฒนา',
       roleContributionSeparator: ' — ',

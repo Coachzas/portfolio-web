@@ -639,7 +639,7 @@
   min-height: 290px;
   flex-direction: column;
   align-items: flex-start;
-  padding: 23px;
+  overflow: hidden;
   color: inherit;
   font: inherit;
   text-align: left;
@@ -657,11 +657,71 @@
   width: 100%;
 }
 
+.project-image-frame {
+  position: relative;
+  display: grid;
+  overflow: hidden;
+  place-items: center;
+  background: #070b16;
+}
+
+.project-image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.project-image-skeleton,
+.project-image-fallback {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+}
+
+.project-image-skeleton {
+  background: linear-gradient(110deg, #111827 8%, #1e293b 18%, #111827 33%);
+  background-size: 200% 100%;
+  animation: project-image-loading 1.4s linear infinite;
+}
+
+.project-image-fallback {
+  padding: 16px;
+  color: #94a3b8;
+  font-size: 12px;
+  text-align: center;
+}
+
+.project-card-cover {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  max-height: 190px;
+}
+
+.project-card-cover .project-image {
+  transition: transform 180ms ease;
+}
+
+.project-card:hover .project-card-cover .project-image,
+.project-card:focus-visible .project-card-cover .project-image {
+  transform: scale(1.03);
+}
+
+.project-card-body {
+  display: flex;
+  width: 100%;
+  flex: 1;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 20px 23px 23px;
+}
+
 .project-number {
   display: grid;
   width: 34px;
   height: 34px;
-  margin-bottom: 22px;
+  margin-bottom: 14px;
   place-items: center;
   border: 1px solid rgb(167 139 250 / 23%);
   border-radius: 9px;
@@ -727,8 +787,9 @@
   display: grid;
   width: min(920px, 100%);
   max-height: min(90vh, 900px);
-  grid-template-columns: 1.05fr 0.95fr;
-  overflow: auto;
+  grid-template-columns: minmax(0, 1fr);
+  grid-template-rows: auto 1fr;
+  overflow-y: auto;
   border: 1px solid rgb(148 163 184 / 20%);
   border-radius: 18px;
   background: #0b1120;
@@ -764,10 +825,8 @@
 
 .project-carousel {
   position: relative;
-  display: grid;
-  min-height: 340px;
-  align-self: stretch;
-  place-items: center;
+  min-height: 320px;
+  height: min(56vh, 540px);
   overflow: hidden;
   background:
     radial-gradient(ellipse at 50% 45%, rgb(79 70 229 / 17%), transparent 60%),
@@ -775,11 +834,11 @@
 }
 
 .project-carousel-image {
-  display: block;
   width: 100%;
   height: 100%;
-  min-height: 340px;
-  max-height: 540px;
+}
+
+.project-carousel-image .project-image {
   object-fit: contain;
 }
 
@@ -915,21 +974,20 @@
 @media (max-width: 700px) {
   .project-modal {
     max-height: 92vh;
-    grid-template-columns: 1fr;
   }
 
   .project-carousel {
-    min-height: 230px;
-  }
-
-  .project-carousel-image {
+    min-height: 220px;
     height: min(38vh, 320px);
-    min-height: 230px;
   }
 
   .project-modal-content {
     padding: 24px 20px;
   }
+}
+
+@keyframes project-image-loading {
+  to { background-position-x: -200%; }
 }
 
 @keyframes modal-backdrop-in {

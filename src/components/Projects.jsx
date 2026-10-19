@@ -3,6 +3,32 @@ import { portfolioData } from '../data/portfolioData';
 import Icon from './Icon';
 import { useLanguage } from '../context/useLanguage';
 
+function ProjectImage({ src, alt, fallbackLabel, className }) {
+  const [status, setStatus] = useState('loading');
+
+  return (
+    <span
+      aria-busy={status === 'loading'}
+      className={`project-image-frame ${className}`}
+    >
+      {status === 'loading' && <span aria-hidden="true" className="project-image-skeleton" />}
+      {status === 'error' ? (
+        <span aria-label={`${alt}: ${fallbackLabel}`} className="project-image-fallback" role="img">
+          {fallbackLabel}
+        </span>
+      ) : (
+        <img
+          alt={alt}
+          className="project-image"
+          onError={() => setStatus('error')}
+          onLoad={() => setStatus('loaded')}
+          src={src}
+        />
+      )}
+    </span>
+  );
+}
+
 function ProjectModal({ project, ui, onClose, triggerRef }) {
   const [activeImage, setActiveImage] = useState(0);
   const dialogRef = useRef(null);
@@ -78,7 +104,13 @@ function ProjectModal({ project, ui, onClose, triggerRef }) {
         </button>
 
         <div className="project-carousel">
-          <img className="project-carousel-image" src={image} alt={`${project.title} - ${ui.showScreenshot} ${activeImage + 1}`} />
+          <ProjectImage
+            alt={`${project.title} - ${ui.showScreenshot} ${activeImage + 1}`}
+            className="project-carousel-image"
+            fallbackLabel={ui.screenshotUnavailable}
+            key={image}
+            src={image}
+          />
           {project.images.length > 1 && (
             <>
               <button
@@ -176,16 +208,24 @@ function Projects() {
               onClick={(event) => openProject(project, event)}
               type="button"
             >
-              <span className="project-number">0{index + 1}</span>
-              <span className="project-card-title">{project.title}</span>
-              <span className="project-card-description">{project.description}</span>
-              <span className="tag-list">
-                {project.techStack.map((tech) => (
-                  <span className="tech-tag" key={tech}>{tech}</span>
-                ))}
-              </span>
-              <span className="project-link">
-                {projectsSection.viewDetails} <span aria-hidden="true">↗</span>
+              <ProjectImage
+                alt={`${project.title} cover`}
+                className="project-card-cover"
+                fallbackLabel={ui.screenshotUnavailable}
+                src={project.images[0]}
+              />
+              <span className="project-card-body">
+                <span className="project-number">0{index + 1}</span>
+                <span className="project-card-title">{project.title}</span>
+                <span className="project-card-description">{project.description}</span>
+                <span className="tag-list">
+                  {project.techStack.map((tech) => (
+                    <span className="tech-tag" key={tech}>{tech}</span>
+                  ))}
+                </span>
+                <span className="project-link">
+                  {projectsSection.viewDetails} <span aria-hidden="true">↗</span>
+                </span>
               </span>
             </button>
           ))}
