@@ -578,7 +578,7 @@
 .about-bento-grid {
   display: grid;
   grid-template-columns: repeat(12, minmax(0, 1fr));
-  grid-template-rows: repeat(3, minmax(132px, auto));
+  grid-template-rows: repeat(4, minmax(132px, auto));
   gap: 16px;
 }
 
@@ -621,13 +621,36 @@
 
 .about-bio-card {
   display: flex;
-  min-height: 440px;
-  grid-column: span 7;
-  grid-row: span 3;
+  min-height: 410px;
+  grid-column: 6 / span 7;
+  grid-row: 1 / span 3;
   flex-direction: column;
   justify-content: space-between;
   padding: clamp(24px, 4vw, 38px);
   isolation: isolate;
+}
+
+.about-portrait-card {
+  display: flex;
+  min-height: 270px;
+  grid-column: 1 / span 5;
+  grid-row: 1 / span 2;
+  flex-direction: column;
+  gap: 12px;
+  padding: 17px;
+}
+
+.about-portrait-image {
+  position: relative;
+  z-index: 1;
+  display: block;
+  width: 100%;
+  min-height: 0;
+  flex: 1;
+  overflow: hidden;
+  border-radius: 12px;
+  object-fit: cover;
+  object-position: center;
 }
 
 .about-card-topline {
@@ -703,6 +726,20 @@
   flex-direction: column;
   justify-content: space-between;
   padding: 21px 23px;
+}
+
+.about-status-card {
+  grid-column: 1 / span 5;
+  grid-row: 3;
+}
+
+.about-location-card {
+  grid-column: 1 / span 7;
+  grid-row: 4;
+}
+
+.about-languages-card {
+  grid-row: 4;
 }
 
 .about-status-card {
@@ -1852,15 +1889,25 @@
     min-height: 340px;
     grid-column: span 6;
     grid-row: auto;
+    order: 1;
+  }
+
+  .about-portrait-card {
+    min-height: 230px;
+    grid-column: span 3;
+    grid-row: auto;
+    order: 0;
   }
 
   .about-status-card,
   .about-location-card {
     grid-column: span 3;
+    grid-row: auto;
   }
 
   .about-languages-card {
     grid-column: span 6;
+    grid-row: auto;
   }
 
   .contact-email-card {
@@ -1987,6 +2034,7 @@
   }
 
   .about-bio-card,
+  .about-portrait-card,
   .about-status-card,
   .about-location-card,
   .about-languages-card,
@@ -2001,6 +2049,10 @@
 
   .about-bio-card {
     min-height: 310px;
+  }
+
+  .about-portrait-card {
+    min-height: 230px;
   }
 
   .about-bio-text {

@@ -10,11 +10,10 @@ const aboutCopy = {
   en: {
     label: 'ABOUT ME',
     headline: 'Driven by Code, Crafted with Precision',
-    bioLabel: 'PROFILE / 01',
     bio:
-      'I hold a Bachelor’s degree in Computer Science from Kasetsart University, Kamphaeng Saen Campus, and build full-stack experiences for web and mobile. I enjoy taking ideas from a clean, maintainable foundation all the way to production.',
+      'I hold a Bachelor’s degree in Computer Science from Kasetsart University, Kamphaeng Saen Campus, and build full-stack web applications and automation systems. I enjoy taking ideas from a clean, maintainable foundation all the way to production.',
     education: 'B.Sc. Computer Science · Kasetsart University',
-    role: 'Full-Stack · Web & Mobile',
+    role: 'Full-Stack Web · Automation',
     statusLabel: 'CURRENT STATUS',
     status: 'Open for Immediate Opportunities',
     locationLabel: 'BASED IN',
@@ -26,11 +25,10 @@ const aboutCopy = {
   th: {
     label: 'เกี่ยวกับผม',
     headline: 'ขับเคลื่อนด้วยโค้ด สร้างสรรค์ด้วยความใส่ใจ',
-    bioLabel: 'ประวัติ / 01',
     bio:
-      'ผมสำเร็จการศึกษาปริญญาตรีสาขาวิทยาการคอมพิวเตอร์จากมหาวิทยาลัยเกษตรศาสตร์ วิทยาเขตกำแพงแสน และมีประสบการณ์พัฒนา Full Stack ทั้งเว็บและแอปมือถือ ผมใส่ใจการสร้างระบบที่สะอาด ดูแลต่อได้ง่าย ตั้งแต่เริ่มต้นจนพร้อมใช้งานจริง',
+      'ผมสำเร็จการศึกษาปริญญาตรีสาขาวิทยาการคอมพิวเตอร์จากมหาวิทยาลัยเกษตรศาสตร์ วิทยาเขตกำแพงแสน และมีประสบการณ์พัฒนาเว็บแอปพลิเคชันแบบ Full Stack รวมถึงระบบอัตโนมัติ ผมใส่ใจการสร้างระบบที่สะอาด ดูแลต่อได้ง่าย ตั้งแต่เริ่มต้นจนพร้อมใช้งานจริง',
     education: 'วิทยาการคอมพิวเตอร์ · มหาวิทยาลัยเกษตรศาสตร์',
-    role: 'Full Stack · เว็บและแอปมือถือ',
+    role: 'Full Stack · เว็บและระบบอัตโนมัติ',
     statusLabel: 'สถานะปัจจุบัน',
     status: 'พร้อมเริ่มงานทันที',
     locationLabel: 'ที่อยู่',
@@ -61,7 +59,6 @@ function About() {
         <div className="about-bento-grid grid gap-4">
           <article className="about-bento-card about-bio-card">
             <div className="about-card-topline">
-              <span className="about-card-index">{copy.bioLabel}</span>
               <Code2 aria-hidden="true" className="about-card-watermark" size={34} />
             </div>
             <p className="about-bio-text">{copy.bio}</p>
@@ -70,6 +67,14 @@ function About() {
               <span>{copy.role}</span>
             </div>
             <span aria-hidden="true" className="about-card-orb" />
+          </article>
+
+          <article className="about-bento-card about-portrait-card">
+            <img
+              alt={language === 'th' ? 'รูปโปรไฟล์' : 'Profile portrait'}
+              className="about-portrait-image"
+              src="/student-profile.jpg"
+            />
           </article>
 
           <article className="about-bento-card about-status-card">

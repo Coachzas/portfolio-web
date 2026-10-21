@@ -59,7 +59,7 @@ const projects = [
   {
     title: { en: 'Recruitment System', th: 'ระบบสรรหาบุคลากร' },
     githubUrl: 'https://github.com/Coachzas/recruitment-system',
-    demoUrl: '',
+    demoUrl: 'https://recruitment-system-three-gamma.vercel.app/',
     description: {
       en: 'An applicant tracking system that streamlines candidate intake with automated document parsing and AI-assisted evaluation.',
       th: 'ระบบติดตามผู้สมัครที่ช่วยให้การรับสมัครมีประสิทธิภาพยิ่งขึ้นด้วยการดึงข้อมูลจากเอกสารอัตโนมัติและการประเมินด้วย AI',
@@ -69,7 +69,7 @@ const projects = [
       en: 'Built recruitment workflows that organize applicant information and connect document parsing with AI evaluation.',
       th: 'พัฒนาเวิร์กโฟลว์การสรรหาเพื่อจัดระเบียบข้อมูลผู้สมัคร และเชื่อมการดึงข้อมูลจากเอกสารเข้ากับการประเมินด้วย AI',
     },
-    techStack: ['Applicant Tracking', 'Document Parsing', 'AI Evaluation'],
+    techStack: ['React ', 'Vite ', 'Tailwind CSS', 'Express ', 'PostgreSQL ', 'Gemini API ', 'Claude AI'],
     images: [
       '/project-shots/Fetch0.png',
       '/project-shots/Applicants.png',
@@ -106,7 +106,7 @@ const projects = [
       en: 'Developed the ordering experience and connected order events to n8n webhooks, with PostgreSQL supporting order data.',
       th: 'พัฒนาประสบการณ์การสั่งอาหารและเชื่อมต่อเหตุการณ์คำสั่งซื้อกับ n8n webhooks โดยใช้ PostgreSQL จัดเก็บข้อมูลคำสั่งซื้อ',
     },
-    techStack: ['n8n', 'PostgreSQL'],
+    techStack: ['HTML', 'CSS', 'Tailwind CSS', 'Express', 'PostgreSQL', 'n8n'],
     imagePresentation: 'portrait',
     images: [
       '/project-shots/FromF1.png',
@@ -146,9 +146,13 @@ const projects = [
     },
     techStack: ['React', 'Express', 'Socket.IO', 'PostgreSQL', 'Prisma', 'Zegocloud'],
     images: [
-      '/project-shots/orgchat-conversations.svg',
-      '/project-shots/orgchat-channel.svg',
-      '/project-shots/orgchat-call.svg',
+      '/project-shots/Message.png',
+      '/project-shots/Group.png',
+      '/project-shots/GroupFile.png',
+      '/project-shots/AdminNote.png',
+      '/project-shots/VoiceCall.png',
+      '/project-shots/VideoCall.png',
+      '/project-shots/AdminDashb.png',
     ],
     features: {
       en: [
@@ -184,6 +188,11 @@ const sharedData = {
         'Gemini API',
         'Claude AI',
       ],
+    },
+    {
+      company: 'Kasetsart University, Kamphaeng Saen Campus',
+      period: '2022 – 2026',
+      techStack: [],
     },
   ],
 };
@@ -234,6 +243,12 @@ export const portfolioData = {
             'Developed an email automation pipeline for document processing.',
             'Built an AI OCR pipeline to parse document data and streamline workflows.',
           ],
+        },
+        {
+          role: 'Bachelor of Science, Computer Science',
+          period: '2022 – 2026',
+          description: 'Faculty of Liberal Arts and Science',
+          highlights: ['GPA: 3.07'],
         },
       ],
       technologiesLabel: 'Technologies used',
@@ -337,6 +352,12 @@ export const portfolioData = {
             'พัฒนาระบบอัตโนมัติสำหรับประมวลผลเอกสารผ่านอีเมล',
             'สร้างระบบ AI OCR เพื่อดึงข้อมูลจากเอกสารและปรับปรุงขั้นตอนการทำงาน',
           ],
+        },
+        {
+          role: 'วิทยาศาสตรบัณฑิต สาขาวิทยาการคอมพิวเตอร์',
+          period: '2565 – 2569',
+          description: 'คณะศิลปศาสตร์และวิทยาศาสตร์',
+          highlights: ['เกรดเฉลี่ย: 3.07'],
         },
       ],
       technologiesLabel: 'เทคโนโลยีที่ใช้',
