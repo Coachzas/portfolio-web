@@ -1,4 +1,5 @@
 import './App.css';
+import About from './components/About';
 import Experience from './components/Experience';
 import Footer from './components/Footer';
 import Hero from './components/Hero';
@@ -11,6 +12,7 @@ function App() {
     <div className="app-shell min-h-screen">
       <Navbar />
       <Hero />
+      <About />
       <Experience />
       <Projects />
       <Skills />

@@ -202,6 +202,7 @@ export const portfolioData = {
     navbar: {
       links: [
         { label: 'Home', href: '#hero' },
+        { label: 'About', href: '#about' },
         { label: 'Experience', href: '#experience' },
         { label: 'Projects', href: '#projects' },
         { label: 'Skills', href: '#skills' },
@@ -251,10 +252,14 @@ export const portfolioData = {
       title: 'Skills',
     },
     footer: {
-      heading: 'Contact',
-      title: "Let's build something great together.",
-      description: 'Open to full-time opportunities and freelance projects. Feel free to reach out — I usually reply within a day.',
-      resumeLabel: 'Resume',
+      heading: 'GET IN TOUCH',
+      title: 'Ready to Collaborate & Build Something Exceptional',
+      description: 'Open to full-time roles, contracts, and innovative projects. Feel free to reach out—I usually respond within 24 hours.',
+      emailPrompt: 'LET’S START A CONVERSATION',
+      githubDetail: 'Profile & Repositories',
+      linkedinDetail: 'Professional Network',
+      resumeLabel: 'Download Resume',
+      resumePrompt: 'View experience & skills',
       copyright: 'Built with care.',
       backToTop: 'Back to top',
       backToTopLabel: 'Back to top',
@@ -300,6 +305,7 @@ export const portfolioData = {
     navbar: {
       links: [
         { label: 'หน้าแรก', href: '#hero' },
+        { label: 'เกี่ยวกับผม', href: '#about' },
         { label: 'ประสบการณ์', href: '#experience' },
         { label: 'ผลงาน', href: '#projects' },
         { label: 'ทักษะ', href: '#skills' },
@@ -349,10 +355,14 @@ export const portfolioData = {
       title: 'ทักษะ',
     },
     footer: {
-      heading: 'ติดต่อ',
-      title: 'มาสร้างสิ่งดี ๆ ร่วมกัน',
-      description: 'เปิดรับโอกาสงานประจำและงานฟรีแลนซ์ ติดต่อมาได้เลยครับ โดยปกติผมจะตอบกลับภายในหนึ่งวัน',
-      resumeLabel: 'เรซูเม่',
+      heading: 'ช่องทางการติดต่อ',
+      title: 'พร้อมร่วมงานและเปลี่ยนไอเดียให้เป็นจริง',
+      description: 'เปิดรับโอกาสงานประจำ งานสัญญาจ้าง และโครงการต่าง ๆ พร้อมตอบกลับภายใน 24 ชม.',
+      emailPrompt: 'เริ่มต้นพูดคุยกัน',
+      githubDetail: 'โปรไฟล์และ repositories',
+      linkedinDetail: 'เครือข่ายด้านอาชีพ',
+      resumeLabel: 'ดาวน์โหลดเรซูเม่',
+      resumePrompt: 'ประสบการณ์และทักษะ',
       copyright: 'สร้างด้วยความใส่ใจ',
       backToTop: 'กลับขึ้นด้านบน',
       backToTopLabel: 'กลับขึ้นด้านบน',

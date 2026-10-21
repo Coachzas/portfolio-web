@@ -1,4 +1,9 @@
 import { portfolioData } from '../data/portfolioData';
+import {
+  ArrowDownToLine,
+  ArrowUpRight,
+  Mail,
+} from 'lucide-react';
 import Icon from './Icon';
 import useEmailCopy from './useEmailCopy';
 import { useLanguage } from '../context/useLanguage';
@@ -13,38 +18,63 @@ function Footer() {
   return (
     <footer className="site-footer" id="contact">
       <div className="content-width footer-content">
-        <div className="footer-contact">
-          <p className="eyebrow">{footer.heading}</p>
+        <div className="contact-heading">
+          <p className="contact-label">
+            <Mail aria-hidden="true" size={15} />
+            {footer.heading}
+            <span aria-hidden="true">/</span>
+            {language === 'th' ? 'GET IN TOUCH' : 'ช่องทางการติดต่อ'}
+          </p>
           <h2>{footer.title}</h2>
           <p className="footer-description">{footer.description}</p>
-          <div className="footer-contact-links">
-            <a className="footer-contact-link" href={`mailto:${email}`} onClick={copyEmail}>
-              <Icon name="mail" size={20} />
-              <span>{email}</span>
-            </a>
-            {socialLinks.filter((link) => link.icon !== 'mail').map((link) => (
+        </div>
+
+        <div className="contact-bento-grid grid gap-4">
+          <a className="contact-bento-card contact-email-card" href={`mailto:${email}`} onClick={copyEmail}>
+            <span className="contact-card-icon"><Mail aria-hidden="true" size={21} /></span>
+            <span className="contact-card-copy">
+              <span className="contact-card-label">{footer.emailPrompt}</span>
+              <strong>{email}</strong>
+            </span>
+            <ArrowUpRight aria-hidden="true" className="contact-card-arrow" size={19} />
+          </a>
+          {socialLinks.filter((link) => link.icon !== 'mail').map((link) => {
+            const isGithub = link.icon === 'github';
+
+            return (
               <a
-                className="footer-contact-link"
+                className={`contact-bento-card contact-social-card${isGithub ? ' contact-github-card' : ' contact-linkedin-card'}`}
                 href={link.href}
                 key={link.name}
                 rel="noreferrer"
                 target="_blank"
               >
-                <Icon name={link.icon} size={20} />
-                <span>{link.name}</span>
+                <span className="contact-card-icon">
+                  <Icon aria-hidden="true" name={link.icon} size={21} />
+                </span>
+                <span className="contact-card-copy">
+                  <strong>{link.name}</strong>
+                  <span>{isGithub ? footer.githubDetail : footer.linkedinDetail}</span>
+                </span>
+                <ArrowUpRight aria-hidden="true" className="contact-card-arrow" size={18} />
               </a>
-            ))}
-            <a
-              className="footer-contact-link"
-              download="Tirawat-Pisut-Resume.pdf"
-              href="/resume.pdf"
-            >
-              <Icon name="download" size={20} />
-              <span>{footer.resumeLabel}</span>
-            </a>
-          </div>
-          {copyStatus && <span className="copy-notification" role="status">{copyStatus}</span>}
+            );
+          })}
+          <a
+            className="contact-bento-card contact-resume-card"
+            download="Tirawat-Pisut-Resume.pdf"
+            href="/resume.pdf"
+          >
+            <span className="contact-card-icon"><ArrowDownToLine aria-hidden="true" size={21} /></span>
+            <span className="contact-card-copy">
+              <strong>{footer.resumeLabel}</strong>
+              <span>{footer.resumePrompt}</span>
+            </span>
+            <ArrowUpRight aria-hidden="true" className="contact-card-arrow" size={18} />
+          </a>
         </div>
+        {copyStatus && <span className="copy-notification" role="status">{copyStatus}</span>}
+
         <div className="footer-bottom">
           <p>© {new Date().getFullYear()} {name}. {footer.copyright}</p>
           <a className="back-to-top" href="#hero" aria-label={footer.backToTopLabel}>

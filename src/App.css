@@ -513,6 +513,301 @@
   line-height: 1.7;
 }
 
+.about-section {
+  position: relative;
+  padding-block: 100px;
+  isolation: isolate;
+}
+
+.about-section::before {
+  position: absolute;
+  z-index: -1;
+  top: 15%;
+  left: -180px;
+  width: 420px;
+  height: 420px;
+  border-radius: 50%;
+  background: rgb(99 102 241 / 10%);
+  content: "";
+  filter: blur(110px);
+}
+
+.about-heading,
+.contact-heading {
+  max-width: 780px;
+  margin-bottom: 34px;
+}
+
+.about-label,
+.contact-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  min-height: 34px;
+  margin: 0 0 18px;
+  padding: 0 13px;
+  border: 1px solid rgb(129 140 248 / 26%);
+  border-radius: 999px;
+  color: #a5b4fc;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.about-label svg,
+.contact-label svg {
+  color: #c4b5fd;
+}
+
+.about-headline,
+.contact-heading h2 {
+  margin: 0;
+  color: #f8fafc;
+  font-size: clamp(32px, 4.5vw, 52px);
+  font-weight: 750;
+  letter-spacing: -0.055em;
+  line-height: 1.12;
+}
+
+.about-headline-th {
+  letter-spacing: 0;
+  line-height: 1.3;
+}
+
+.about-bento-grid {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  grid-template-rows: repeat(3, minmax(132px, auto));
+  gap: 16px;
+}
+
+.about-bento-card,
+.contact-bento-card {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid transparent;
+  border-radius: 18px;
+  background:
+    linear-gradient(145deg, rgb(15 23 42 / 88%), rgb(8 14 30 / 80%)) padding-box,
+    linear-gradient(135deg, rgb(129 140 248 / 42%), rgb(148 163 184 / 10%) 48%, rgb(56 189 248 / 22%)) border-box;
+  box-shadow: 0 18px 55px rgb(0 0 0 / 16%), inset 0 1px rgb(255 255 255 / 4%);
+  backdrop-filter: blur(18px);
+}
+
+.about-bento-card::after,
+.contact-bento-card::after {
+  position: absolute;
+  z-index: 0;
+  top: -80px;
+  right: -65px;
+  width: 190px;
+  height: 190px;
+  border-radius: 50%;
+  background: rgb(99 102 241 / 12%);
+  content: "";
+  filter: blur(55px);
+  pointer-events: none;
+}
+
+.about-bento-card:hover,
+.contact-bento-card:hover {
+  border-color: transparent;
+  background:
+    linear-gradient(145deg, rgb(19 27 48 / 94%), rgb(9 15 32 / 88%)) padding-box,
+    linear-gradient(135deg, rgb(167 139 250 / 74%), rgb(56 189 248 / 38%) 58%, rgb(52 211 153 / 22%)) border-box;
+  box-shadow: 0 20px 60px rgb(79 70 229 / 13%), inset 0 1px rgb(255 255 255 / 5%);
+}
+
+.about-bio-card {
+  display: flex;
+  min-height: 440px;
+  grid-column: span 7;
+  grid-row: span 3;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: clamp(24px, 4vw, 38px);
+  isolation: isolate;
+}
+
+.about-card-topline {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.about-card-index {
+  position: relative;
+  z-index: 1;
+  color: #818cf8;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.about-card-watermark {
+  color: rgb(196 181 253 / 72%);
+  filter: drop-shadow(0 0 18px rgb(129 140 248 / 45%));
+}
+
+.about-bio-text {
+  position: relative;
+  z-index: 1;
+  max-width: 650px;
+  margin: 38px 0;
+  color: #dbe4f3;
+  font-size: clamp(17px, 2vw, 22px);
+  font-weight: 520;
+  line-height: 1.85;
+}
+
+.about-bio-meta {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+}
+
+.about-bio-meta span {
+  padding: 8px 11px;
+  border: 1px solid rgb(148 163 184 / 17%);
+  border-radius: 999px;
+  background: rgb(15 23 42 / 52%);
+  color: #cbd5e1;
+  font-size: 10px;
+  font-weight: 600;
+}
+
+.about-card-orb {
+  position: absolute;
+  z-index: 0;
+  right: -100px;
+  bottom: -155px;
+  width: 330px;
+  height: 330px;
+  border: 1px solid rgb(129 140 248 / 15%);
+  border-radius: 50%;
+  box-shadow: 0 0 80px rgb(79 70 229 / 12%), inset 0 0 60px rgb(56 189 248 / 5%);
+  pointer-events: none;
+}
+
+.about-status-card,
+.about-location-card,
+.about-languages-card {
+  display: flex;
+  min-width: 0;
+  grid-column: span 5;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 21px 23px;
+}
+
+.about-status-card {
+  border-color: rgb(52 211 153 / 22%);
+  background:
+    linear-gradient(145deg, rgb(6 45 42 / 76%), rgb(8 20 34 / 88%)) padding-box,
+    linear-gradient(135deg, rgb(52 211 153 / 60%), rgb(148 163 184 / 12%) 68%) border-box;
+  box-shadow: 0 12px 45px rgb(16 185 129 / 8%), inset 0 1px rgb(255 255 255 / 4%);
+}
+
+.about-status-card:hover {
+  background:
+    linear-gradient(145deg, rgb(6 58 49 / 84%), rgb(8 24 38 / 90%)) padding-box,
+    linear-gradient(135deg, rgb(52 211 153 / 78%), rgb(56 189 248 / 25%) 72%) border-box;
+  box-shadow: 0 18px 50px rgb(16 185 129 / 16%), inset 0 1px rgb(255 255 255 / 5%);
+}
+
+.about-status-content {
+  display: flex;
+  align-items: flex-start;
+  gap: 13px;
+}
+
+.about-status-content h3 {
+  margin: 0;
+  color: #ecfdf5;
+  font-size: clamp(16px, 1.8vw, 20px);
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+.about-status-indicator {
+  display: grid;
+  width: 10px;
+  height: 10px;
+  flex: 0 0 10px;
+  margin-top: 6px;
+  border-radius: 50%;
+  background: #34d399;
+  box-shadow: 0 0 0 0 rgb(52 211 153 / 55%);
+  animation: availability-pulse 2.4s ease-out infinite;
+}
+
+.about-status-caption {
+  color: #86efac;
+  font-size: 11px;
+  line-height: 1.5;
+}
+
+.about-small-card-content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.about-icon-shell {
+  display: grid;
+  width: 42px;
+  height: 42px;
+  flex: 0 0 42px;
+  place-items: center;
+  border: 1px solid rgb(129 140 248 / 26%);
+  border-radius: 12px;
+  background: rgb(99 102 241 / 12%);
+  color: #a5b4fc;
+}
+
+.about-small-card-content h3 {
+  margin: 0;
+  color: #e2e8f0;
+  font-size: 13px;
+  font-weight: 650;
+  line-height: 1.6;
+}
+
+.about-small-card-content p {
+  margin: 4px 0 0;
+  color: #94a3b8;
+  font-size: 11px;
+}
+
+.about-language-bars {
+  display: flex;
+  gap: 5px;
+}
+
+.about-language-bars i {
+  width: 31px;
+  height: 3px;
+  border-radius: 3px;
+  background: linear-gradient(90deg, #818cf8, #38bdf8);
+}
+
+.about-language-bars i:last-child {
+  opacity: 0.4;
+}
+
+@keyframes availability-pulse {
+  0% { box-shadow: 0 0 0 0 rgb(52 211 153 / 48%); }
+  70% { box-shadow: 0 0 0 9px rgb(52 211 153 / 0%); }
+  100% { box-shadow: 0 0 0 0 rgb(52 211 153 / 0%); }
+}
+
 .panel {
   border: 1px solid rgb(148 163 184 / 12%);
   border-radius: 15px;
@@ -1322,69 +1617,186 @@
 }
 
 .site-footer {
-  padding-block: 72px 24px;
+  position: relative;
+  overflow: hidden;
+  padding-block: 90px 24px;
   border-top: 1px solid rgb(148 163 184 / 9%);
   background:
-    radial-gradient(ellipse at 50% 0, rgb(51 65 95 / 56%), transparent 70%),
+    radial-gradient(ellipse at 82% 0, rgb(79 70 229 / 18%), transparent 52%),
+    radial-gradient(ellipse at 14% 45%, rgb(14 165 233 / 8%), transparent 40%),
     rgb(1 4 16 / 45%);
 }
 
-.footer-contact {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  text-align: center;
+.footer-content {
+  position: relative;
+  z-index: 1;
 }
 
-.footer-contact .eyebrow {
-  margin-bottom: 12px;
+.contact-heading {
+  max-width: 850px;
+  margin-bottom: 34px;
 }
 
-.site-footer h2 {
-  font-size: clamp(25px, 4vw, 34px);
+.contact-label {
+  border-color: rgb(56 189 248 / 24%);
+  background: rgb(14 165 233 / 8%);
+  color: #7dd3fc;
 }
 
 .footer-description {
-  max-width: 620px;
-  margin: 18px 0 0;
-  color: #cbd5e1;
+  max-width: 700px;
+  margin: 16px 0 0;
+  color: #aebbd0;
   font-size: 14px;
-  font-weight: 550;
   line-height: 1.8;
 }
 
-.footer-contact-links {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+.contact-bento-grid {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  grid-template-rows: repeat(2, minmax(145px, auto));
   gap: 16px;
-  margin-top: 40px;
 }
 
-.footer-contact-link {
-  display: inline-flex;
-  min-height: 60px;
+.contact-bento-card {
+  display: flex;
+  min-width: 0;
   align-items: center;
-  justify-content: center;
-  gap: 12px;
-  padding: 0 22px;
-  border: 1px solid rgb(148 163 184 / 18%);
-  background: rgb(15 23 42 / 24%);
-  color: #f1f5f9;
-  font-size: 14px;
-  font-weight: 700;
-  transition: border-color 160ms ease, background 160ms ease, color 160ms ease, transform 160ms ease;
+  gap: 16px;
+  padding: clamp(18px, 3vw, 28px);
+  color: #e2e8f0;
+  text-align: left;
+  text-decoration: none;
+  transition: transform 180ms ease, box-shadow 180ms ease, background 180ms ease;
 }
 
-.footer-contact-link:hover {
-  transform: translateY(-2px);
-  border-color: rgb(167 139 250 / 55%);
-  background: rgb(124 58 237 / 12%);
+.contact-bento-card:hover {
+  transform: translateY(-3px);
+}
+
+.contact-email-card {
+  grid-column: 1 / 9;
+  grid-row: 1;
+}
+
+.contact-resume-card {
+  grid-column: 9 / 13;
+  grid-row: 1 / 3;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  border: 1px solid transparent;
+  background:
+    linear-gradient(135deg, rgb(79 70 229 / 88%), rgb(124 58 237 / 80%) 55%, rgb(14 165 233 / 62%)) padding-box,
+    linear-gradient(135deg, #a5b4fc, #38bdf8) border-box;
+  box-shadow: 0 20px 55px rgb(79 70 229 / 22%), inset 0 1px rgb(255 255 255 / 17%);
+}
+
+.contact-resume-card::after {
+  top: auto;
+  right: -35px;
+  bottom: -100px;
+  width: 240px;
+  height: 240px;
+  background: rgb(224 231 255 / 30%);
+  filter: blur(60px);
+}
+
+.contact-resume-card:hover {
+  background:
+    linear-gradient(135deg, rgb(99 102 241 / 96%), rgb(139 92 246 / 92%) 55%, rgb(14 165 233 / 76%)) padding-box,
+    linear-gradient(135deg, #c4b5fd, #7dd3fc) border-box;
+  box-shadow: 0 24px 65px rgb(79 70 229 / 32%), inset 0 1px rgb(255 255 255 / 20%);
+}
+
+.contact-github-card {
+  grid-column: 1 / 5;
+  grid-row: 2;
+}
+
+.contact-linkedin-card {
+  grid-column: 5 / 9;
+  grid-row: 2;
+}
+
+.contact-card-icon {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  width: 48px;
+  height: 48px;
+  flex: 0 0 48px;
+  place-items: center;
+  border: 1px solid rgb(148 163 184 / 20%);
+  border-radius: 14px;
+  background: rgb(2 6 23 / 30%);
   color: #c4b5fd;
 }
 
-.footer-contact-link svg {
+.contact-resume-card .contact-card-icon {
+  border-color: rgb(255 255 255 / 25%);
+  background: rgb(255 255 255 / 12%);
+  color: #fff;
+}
+
+.contact-card-copy {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  min-width: 0;
+  flex: 1;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.contact-card-label {
+  color: #818cf8;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+}
+
+.contact-card-copy strong {
+  overflow-wrap: anywhere;
+  color: #f8fafc;
+  font-size: clamp(13px, 1.6vw, 18px);
+  font-weight: 700;
+}
+
+.contact-social-card .contact-card-copy strong,
+.contact-resume-card .contact-card-copy strong {
+  font-size: 16px;
+}
+
+.contact-card-copy > span:last-child:not(.contact-card-label) {
+  color: #94a3b8;
+  font-size: 11px;
+  line-height: 1.5;
+}
+
+.contact-resume-card .contact-card-copy > span:last-child:not(.contact-card-label) {
+  color: rgb(255 255 255 / 78%);
+}
+
+.contact-card-arrow {
+  position: relative;
+  z-index: 1;
   flex: 0 0 auto;
+  color: #64748b;
+  transition: transform 160ms ease, color 160ms ease;
+}
+
+.contact-bento-card:hover .contact-card-arrow {
+  transform: translate(2px, -2px);
+  color: #c4b5fd;
+}
+
+.contact-resume-card .contact-card-arrow {
+  color: #fff;
+}
+
+.site-footer .copy-notification {
+  margin-top: 12px;
 }
 
 .footer-bottom {
@@ -1397,26 +1809,6 @@
   border-top: 1px solid rgb(148 163 184 / 9%);
   color: #64748b;
   font-size: 10px;
-}
-
-@media (max-width: 600px) {
-  .footer-contact-links {
-    width: 100%;
-    gap: 10px;
-    margin-top: 30px;
-  }
-
-  .footer-contact-link {
-    min-height: 52px;
-    gap: 8px;
-    padding: 0 14px;
-    font-size: 12px;
-  }
-
-  .footer-contact-link:first-child {
-    width: 100%;
-    overflow-wrap: anywhere;
-  }
 }
 
 .footer-bottom p {
@@ -1451,6 +1843,45 @@
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
+  .about-bento-grid,
+  .contact-bento-grid {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+  }
+
+  .about-bio-card {
+    min-height: 340px;
+    grid-column: span 6;
+    grid-row: auto;
+  }
+
+  .about-status-card,
+  .about-location-card {
+    grid-column: span 3;
+  }
+
+  .about-languages-card {
+    grid-column: span 6;
+  }
+
+  .contact-email-card {
+    grid-column: 1 / 5;
+    grid-row: 1;
+  }
+
+  .contact-resume-card {
+    grid-column: 5 / 7;
+    grid-row: 1 / 3;
+  }
+
+  .contact-github-card {
+    grid-column: 1 / 4;
+    grid-row: 2;
+  }
+
+  .contact-linkedin-card {
+    grid-column: 4 / 5;
+    grid-row: 2;
+  }
 }
 
 @media (max-width: 600px) {
@@ -1539,6 +1970,66 @@
 
   .section {
     padding-block: 68px;
+  }
+
+  .about-section {
+    padding-block: 72px;
+  }
+
+  .about-bento-grid,
+  .contact-bento-grid {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: auto;
+  }
+
+  .about-headline {
+    font-size: clamp(29px, 8vw, 38px);
+  }
+
+  .about-bio-card,
+  .about-status-card,
+  .about-location-card,
+  .about-languages-card,
+  .contact-email-card,
+  .contact-resume-card,
+  .contact-github-card,
+  .contact-linkedin-card {
+    min-height: 0;
+    grid-column: auto;
+    grid-row: auto;
+  }
+
+  .about-bio-card {
+    min-height: 310px;
+  }
+
+  .about-bio-text {
+    margin-block: 28px;
+    font-size: 16px;
+  }
+
+  .about-status-card,
+  .about-location-card,
+  .about-languages-card {
+    min-height: 145px;
+  }
+
+  .contact-heading h2 {
+    font-size: clamp(29px, 8vw, 40px);
+  }
+
+  .contact-bento-card {
+    min-height: 132px;
+  }
+
+  .contact-resume-card {
+    min-height: 160px;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .contact-social-card {
+    min-height: 112px;
   }
 
   .section-heading {
@@ -1739,8 +2230,74 @@ html.light .timeline-marker {
 
 html.light .experience-topline h3,
 html.light .project-card-title,
-html.light .skill-category-title {
+html.light .skill-category-title,
+html.light .about-headline,
+html.light .about-small-card-content h3 {
   color: #0f172a;
+}
+
+html.light .about-label,
+html.light .contact-label {
+  border-color: #c7d2fe;
+  background: #eef2ff;
+  color: #4338ca;
+}
+
+html.light .about-label svg,
+html.light .contact-label svg {
+  color: #6d28d9;
+}
+
+html.light .about-bento-card,
+html.light .contact-bento-card:not(.contact-resume-card) {
+  border-color: transparent;
+  background:
+    linear-gradient(145deg, rgb(255 255 255 / 88%), rgb(248 250 252 / 82%)) padding-box,
+    linear-gradient(135deg, rgb(129 140 248 / 45%), rgb(148 163 184 / 20%) 48%, rgb(56 189 248 / 28%)) border-box;
+  box-shadow: 0 18px 55px rgb(15 23 42 / 7%), inset 0 1px #fff;
+}
+
+html.light .about-bento-card:hover,
+html.light .contact-bento-card:not(.contact-resume-card):hover {
+  background:
+    linear-gradient(145deg, #fff, rgb(248 250 252 / 92%)) padding-box,
+    linear-gradient(135deg, rgb(129 140 248 / 75%), rgb(56 189 248 / 45%) 58%, rgb(52 211 153 / 28%)) border-box;
+  box-shadow: 0 20px 60px rgb(79 70 229 / 10%), inset 0 1px #fff;
+}
+
+html.light .about-bio-text {
+  color: #334155;
+}
+
+html.light .about-bio-meta span {
+  border-color: #e2e8f0;
+  background: rgb(241 245 249 / 78%);
+  color: #475569;
+}
+
+html.light .about-status-card {
+  border-color: transparent;
+  background:
+    linear-gradient(145deg, rgb(236 253 245 / 96%), rgb(240 253 250 / 90%)) padding-box,
+    linear-gradient(135deg, rgb(52 211 153 / 58%), rgb(148 163 184 / 22%) 68%) border-box;
+}
+
+html.light .about-status-content h3 {
+  color: #064e3b;
+}
+
+html.light .about-status-caption {
+  color: #047857;
+}
+
+html.light .about-icon-shell {
+  border-color: #ddd6fe;
+  background: #f5f3ff;
+  color: #6d28d9;
+}
+
+html.light .about-card-index {
+  color: #64748b;
 }
 
 html.light .period-badge {
@@ -1802,24 +2359,46 @@ html.light .project-external-link-demo:not(.project-external-link-disabled):hove
 html.light .site-footer {
   border-top-color: #e2e8f0;
   background:
-    radial-gradient(ellipse at 50% 0, rgb(199 210 254 / 42%), transparent 70%),
+    radial-gradient(ellipse at 82% 0, rgb(199 210 254 / 52%), transparent 52%),
+    radial-gradient(ellipse at 14% 45%, rgb(186 230 253 / 40%), transparent 40%),
     rgb(241 245 249 / 78%);
 }
 
 html.light .footer-description {
-  color: #334155;
+  color: #475569;
 }
 
-html.light .footer-contact-link {
-  border-color: #cbd5e1;
-  background: rgb(255 255 255 / 72%);
+html.light .contact-bento-card:not(.contact-resume-card) {
   color: #1e293b;
 }
 
-html.light .footer-contact-link:hover {
-  border-color: #a78bfa;
-  background: #f5f3ff;
+html.light .contact-card-icon {
+  border-color: #e2e8f0;
+  background: rgb(241 245 249 / 78%);
   color: #6d28d9;
+}
+
+html.light .contact-card-copy strong {
+  color: #0f172a;
+}
+
+html.light .contact-card-label {
+  color: #4f46e5;
+}
+
+html.light .contact-card-copy > span:last-child:not(.contact-card-label) {
+  color: #64748b;
+}
+
+html.light .contact-card-arrow {
+  color: #64748b;
+}
+
+html.light .contact-resume-card,
+html.light .contact-resume-card .contact-card-copy strong,
+html.light .contact-resume-card .contact-card-copy > span:last-child:not(.contact-card-label),
+html.light .contact-resume-card .contact-card-arrow {
+  color: #fff;
 }
 
 html.light .footer-bottom {
