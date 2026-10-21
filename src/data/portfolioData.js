@@ -103,14 +103,16 @@ const projects = [
       th: 'พัฒนาประสบการณ์การสั่งอาหารและเชื่อมต่อเหตุการณ์คำสั่งซื้อกับ n8n webhooks โดยใช้ PostgreSQL จัดเก็บข้อมูลคำสั่งซื้อ',
     },
     techStack: ['n8n', 'PostgreSQL'],
+    imagePresentation: 'portrait',
     images: [
-      '/project-shots/FormF1.png',
+      '/project-shots/FromF1.png',
       '/project-shots/FormRice1.png',
       '/project-shots/FormRice2.png',
       '/project-shots/FormWater1.png',
       '/project-shots/FormWater2.png',
       '/project-shots/Cart1.png',
       '/project-shots/FormConfirm.png',
+      '/project-shots/FormNoti.png',
     ],
     features: {
       en: [
@@ -260,6 +262,7 @@ export const portfolioData = {
       closeProject: 'Close project details',
       closeLightbox: 'Close image gallery',
       openScreenshot: 'Open project screenshots',
+      expandScreenshot: 'Expand screenshot',
       projectGallery: 'image gallery',
       previousScreenshot: 'Previous screenshot',
       nextScreenshot: 'Next screenshot',
@@ -352,6 +355,7 @@ export const portfolioData = {
       closeProject: 'ปิดรายละเอียดผลงาน',
       closeLightbox: 'ปิดแกลเลอรีภาพ',
       openScreenshot: 'เปิดภาพหน้าจอผลงาน',
+      expandScreenshot: 'ขยายภาพหน้าจอ',
       projectGallery: 'แกลเลอรีภาพ',
       previousScreenshot: 'ภาพหน้าจอก่อนหน้า',
       nextScreenshot: 'ภาพหน้าจอถัดไป',

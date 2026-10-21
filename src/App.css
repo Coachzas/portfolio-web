@@ -847,17 +847,46 @@
     #070b16;
 }
 
+.project-carousel-portrait {
+  min-height: 280px;
+  height: min(46vh, 440px);
+}
+
 .project-carousel-image {
   width: 100%;
   height: 100%;
+}
+
+.project-carousel-image-button {
+  position: absolute;
+  z-index: 1;
+  inset: 0;
+  display: block;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: zoom-in;
+}
+
+.project-carousel-image-button:focus-visible {
+  outline-offset: -4px;
 }
 
 .project-carousel-image .project-image {
   object-fit: contain;
 }
 
+.project-carousel-portrait .project-carousel-image .project-image {
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: min(46vh, 440px);
+  margin-inline: auto;
+}
+
 .carousel-arrow {
   position: absolute;
+  z-index: 2;
   top: 50%;
   display: grid;
   width: 38px;
@@ -887,6 +916,7 @@
 
 .carousel-dots {
   position: absolute;
+  z-index: 2;
   bottom: 18px;
   left: 50%;
   display: flex;
@@ -913,6 +943,7 @@
 
 .carousel-counter {
   position: absolute;
+  z-index: 2;
   right: 16px;
   bottom: 15px;
   padding: 5px 8px;
@@ -989,9 +1020,7 @@
   position: fixed;
   z-index: 110;
   inset: 0;
-  display: grid;
-  place-items: center;
-  padding: 24px;
+  overflow: hidden;
   background: rgb(0 0 0 / 92%);
   backdrop-filter: blur(8px);
   animation: modal-backdrop-in 160ms ease-out;
@@ -999,11 +1028,12 @@
 
 .project-lightbox {
   position: relative;
-  display: grid;
-  width: 100%;
+  width: min(100%, 1440px);
   height: 100%;
-  place-items: center;
-  animation: modal-content-in 180ms ease-out;
+  overflow-y: auto;
+  padding: 72px 24px;
+  margin-inline: auto;
+  animation: modal-backdrop-in 180ms ease-out;
 }
 
 .project-lightbox:focus {
@@ -1011,10 +1041,10 @@
 }
 
 .project-lightbox-title {
-  position: absolute;
+  position: fixed;
   z-index: 1;
-  top: 0;
-  left: 0;
+  top: 16px;
+  left: 24px;
   max-width: calc(100% - 96px);
   margin: 0;
   color: #f8fafc;
@@ -1023,18 +1053,20 @@
 }
 
 .project-lightbox-image {
-  width: min(100%, 1440px);
-  height: min(100%, 900px);
+  width: 100%;
+  height: auto;
   background: transparent;
 }
 
 .project-lightbox-image .project-image {
-  object-fit: contain;
+  width: 100%;
+  height: auto;
+  object-fit: initial;
 }
 
 .project-lightbox-close,
 .project-lightbox-arrow {
-  position: absolute;
+  position: fixed;
   z-index: 2;
   display: grid;
   width: 46px;
@@ -1055,13 +1087,13 @@
 }
 
 .project-lightbox-close {
-  top: 0;
-  right: 0;
+  top: 16px;
+  right: 16px;
   border-radius: 12px;
 }
 
 .project-lightbox-arrow {
-  top: 50%;
+  top: 50vh;
   transform: translateY(-50%);
 }
 
@@ -1070,16 +1102,16 @@
 }
 
 .project-lightbox-arrow-left {
-  left: 0;
+  left: 16px;
 }
 
 .project-lightbox-arrow-right {
-  right: 0;
+  right: 16px;
 }
 
 .project-lightbox-counter {
-  position: absolute;
-  bottom: 0;
+  position: fixed;
+  bottom: 16px;
   left: 50%;
   padding: 7px 11px;
   border: 1px solid rgb(226 232 240 / 15%);
@@ -1101,17 +1133,27 @@
     height: min(38vh, 320px);
   }
 
+  .project-carousel-portrait {
+    min-height: 220px;
+    height: min(36vh, 280px);
+  }
+
+  .project-carousel-portrait .project-carousel-image .project-image {
+    max-height: min(36vh, 280px);
+  }
+
   .project-modal-content {
     padding: 24px 20px;
   }
 
-  .project-lightbox-backdrop {
-    padding: 16px;
+  .project-lightbox {
+    padding: 64px 12px;
   }
 
   .project-lightbox-title {
-    top: 4px;
-    max-width: calc(100% - 76px);
+    top: 20px;
+    left: 12px;
+    max-width: calc(100% - 88px);
     font-size: 12px;
   }
 
@@ -1122,15 +1164,15 @@
   }
 
   .project-lightbox-arrow-left {
-    left: -6px;
+    left: 8px;
   }
 
   .project-lightbox-arrow-right {
-    right: -6px;
+    right: 8px;
   }
 
   .project-lightbox-counter {
-    bottom: 4px;
+    bottom: 12px;
   }
 }
 

@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 import { createPortal } from 'react-dom';
 import { portfolioData } from '../data/portfolioData';
 import Icon from './Icon';
@@ -32,8 +32,15 @@ function ProjectImage({ src, alt, fallbackLabel, className }) {
 
 function ProjectModal({ project, ui, onClose, triggerRef }) {
   const [activeImage, setActiveImage] = useState(0);
+  const [isImageExpanded, setIsImageExpanded] = useState(false);
   const dialogRef = useRef(null);
+  const imageZoomTriggerRef = useRef(null);
+  const isImageExpandedRef = useRef(false);
   const image = project.images[activeImage];
+  const closeImageExpansion = useCallback(() => {
+    isImageExpandedRef.current = false;
+    setIsImageExpanded(false);
+  }, []);
 
   useEffect(() => {
     const previousOverflow = document.body.style.overflow;
@@ -42,6 +49,8 @@ function ProjectModal({ project, ui, onClose, triggerRef }) {
     dialogRef.current?.focus();
 
     function handleKeyDown(event) {
+      if (isImageExpandedRef.current) return;
+
       if (event.key === 'Escape') {
         onClose();
       } else if (event.key === 'ArrowLeft') {
@@ -104,14 +113,25 @@ function ProjectModal({ project, ui, onClose, triggerRef }) {
           <Icon name="close" size={21} />
         </button>
 
-        <div className="project-carousel">
-          <ProjectImage
-            alt={`${project.title} - ${ui.showScreenshot} ${activeImage + 1}`}
-            className="project-carousel-image"
-            fallbackLabel={ui.screenshotUnavailable}
-            key={image}
-            src={image}
-          />
+        <div className={`project-carousel${project.imagePresentation === 'portrait' ? ' project-carousel-portrait' : ''}`}>
+          <button
+            aria-label={`${ui.expandScreenshot}: ${project.title}, ${activeImage + 1} / ${project.images.length}`}
+            className="project-carousel-image-button"
+            onClick={(event) => {
+              imageZoomTriggerRef.current = event.currentTarget;
+              isImageExpandedRef.current = true;
+              setIsImageExpanded(true);
+            }}
+            type="button"
+          >
+            <ProjectImage
+              alt={`${project.title} - ${ui.showScreenshot} ${activeImage + 1}`}
+              className="project-carousel-image"
+              fallbackLabel={ui.screenshotUnavailable}
+              key={image}
+              src={image}
+            />
+          </button>
           {project.images.length > 1 && (
             <>
               <button
@@ -173,15 +193,37 @@ function ProjectModal({ project, ui, onClose, triggerRef }) {
             </div>
           </div>
         </div>
+
+        {isImageExpanded && (
+          <ProjectLightbox
+            activeImageIndex={activeImage}
+            initialImageIndex={activeImage}
+            onClose={closeImageExpansion}
+            onImageChange={setActiveImage}
+            project={project}
+            triggerRef={imageZoomTriggerRef}
+            ui={ui}
+          />
+        )}
       </section>
     </div>
   );
 }
 
-function ProjectLightbox({ project, initialImageIndex, ui, onClose, triggerRef }) {
-  const [activeImage, setActiveImage] = useState(initialImageIndex);
+function ProjectLightbox({
+  project,
+  initialImageIndex,
+  activeImageIndex,
+  onImageChange,
+  ui,
+  onClose,
+  triggerRef,
+}) {
+  const [localActiveImage, setLocalActiveImage] = useState(initialImageIndex);
+  const activeImage = activeImageIndex ?? localActiveImage;
   const dialogRef = useRef(null);
   const image = project.images[activeImage];
+  const updateActiveImage = onImageChange ?? setLocalActiveImage;
 
   useEffect(() => {
     const previousOverflow = document.body.style.overflow;
@@ -194,10 +236,10 @@ function ProjectLightbox({ project, initialImageIndex, ui, onClose, triggerRef }
         onClose();
       } else if (event.key === 'ArrowLeft') {
         event.preventDefault();
-        setActiveImage((current) => (current - 1 + project.images.length) % project.images.length);
+        updateActiveImage((current) => (current - 1 + project.images.length) % project.images.length);
       } else if (event.key === 'ArrowRight') {
         event.preventDefault();
-        setActiveImage((current) => (current + 1) % project.images.length);
+        updateActiveImage((current) => (current + 1) % project.images.length);
       } else if (event.key === 'Tab') {
         const focusableElements = dialogRef.current?.querySelectorAll(
           'button:not([disabled]), [href], [tabindex]:not([tabindex="-1"])',
@@ -225,10 +267,14 @@ function ProjectLightbox({ project, initialImageIndex, ui, onClose, triggerRef }
       window.removeEventListener('keydown', handleKeyDown);
       triggerElement?.focus();
     };
-  }, [onClose, project.images.length, triggerRef]);
+  }, [onClose, project.images.length, triggerRef, updateActiveImage]);
+
+  useEffect(() => {
+    if (dialogRef.current) dialogRef.current.scrollTop = 0;
+  }, [activeImage]);
 
   function changeImage(direction) {
-    setActiveImage((current) => (
+    updateActiveImage((current) => (
       (current + direction + project.images.length) % project.images.length
     ));
   }
@@ -309,7 +355,7 @@ function Projects() {
   const triggerRef = useRef(null);
   const lightboxTriggerRef = useRef(null);
   const closeModal = () => setActiveProjectIndex(null);
-  const closeLightbox = () => setLightboxSelection(null);
+  const closeLightbox = useCallback(() => setLightboxSelection(null), []);
 
   function openProject(index, event) {
     triggerRef.current = event.currentTarget;
