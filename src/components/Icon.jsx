@@ -17,6 +17,12 @@ const paths = {
       <path d="m22 7-10 6L2 7" />
     </>
   ),
+  download: (
+    <>
+      <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+      <path d="m7 10 5 5 5-5M12 15V3" />
+    </>
+  ),
   arrow: <path d="M7 17 17 7M7 7h10v10" />,
   'chevron-left': <path d="m15 18-6-6 6-6" />,
   'chevron-right': <path d="m9 18 6-6-6-6" />,

@@ -1,8 +1,8 @@
 const emailAddress = 'tirawat.cod01@gmail.com';
 
 const socialLinks = [
-  { name: 'GitHub', href: 'https://github.com/', icon: 'github' },
-  { name: 'LinkedIn', href: 'https://www.linkedin.com/', icon: 'linkedin' },
+  { name: 'GitHub', href: 'https://github.com/Coachzas', icon: 'github' },
+  { name: 'LinkedIn', href: 'https://www.linkedin.com/in/tirawat-pisut-8a809a3a7/', icon: 'linkedin' },
   { name: 'Email', href: `mailto:${emailAddress}`, icon: 'mail' },
 ];
 
@@ -58,6 +58,8 @@ const skills = [
 const projects = [
   {
     title: { en: 'Recruitment System', th: 'ระบบสรรหาบุคลากร' },
+    githubUrl: 'https://github.com/Coachzas/recruitment-system',
+    demoUrl: '',
     description: {
       en: 'An applicant tracking system that streamlines candidate intake with automated document parsing and AI-assisted evaluation.',
       th: 'ระบบติดตามผู้สมัครที่ช่วยให้การรับสมัครมีประสิทธิภาพยิ่งขึ้นด้วยการดึงข้อมูลจากเอกสารอัตโนมัติและการประเมินด้วย AI',
@@ -93,6 +95,8 @@ const projects = [
   },
   {
     title: { en: 'FormStoreWeb', th: 'FormStoreWeb' },
+    githubUrl: 'https://github.com/Coachzas/FormStoreWeb',
+    demoUrl: 'https://form-store-web.vercel.app/',
     description: {
       en: 'A full-stack web ordering platform connecting a digital menu and order flow with workflow automation.',
       th: 'แพลตฟอร์มเว็บสั่งอาหารแบบ Full-stack ที่เชื่อมต่อเมนูดิจิทัลและขั้นตอนการสั่งอาหารเข้ากับระบบเวิร์กโฟลว์อัตโนมัติ',
@@ -129,6 +133,8 @@ const projects = [
   },
   {
     title: { en: 'OrgChat', th: 'OrgChat' },
+    githubUrl: 'https://github.com/Coachzas/orgchat-project',
+    demoUrl: '',
     description: {
       en: 'A real-time organizational chat platform that brings team conversations and video calls into one shared workspace.',
       th: 'แพลตฟอร์มแชตองค์กรแบบเรียลไทม์ที่รวมการสนทนาของทีมและวิดีโอคอลไว้ในพื้นที่ทำงานเดียวกัน',
@@ -236,14 +242,19 @@ export const portfolioData = {
       title: 'Projects',
       intro: 'A few projects where software, automation, and useful ideas come together.',
       viewDetails: 'View project details',
+      githubLabel: 'GitHub',
+      demoLabel: 'Live Demo',
+      linkUnavailable: 'Add a project URL to enable this link',
     },
     skillsSection: {
       heading: 'Tools of the trade',
       title: 'Skills',
     },
     footer: {
-      heading: 'Have something in mind?',
-      title: "Let's build something useful.",
+      heading: 'Contact',
+      title: "Let's build something great together.",
+      description: 'Open to full-time opportunities and freelance projects. Feel free to reach out — I usually reply within a day.',
+      resumeLabel: 'Resume',
       copyright: 'Built with care.',
       backToTop: 'Back to top',
       backToTopLabel: 'Back to top',
@@ -329,14 +340,19 @@ export const portfolioData = {
       title: 'ผลงาน',
       intro: 'ตัวอย่างผลงานที่ผสานซอฟต์แวร์ ระบบอัตโนมัติ และแนวคิดที่นำไปใช้ได้จริง',
       viewDetails: 'ดูรายละเอียดผลงาน',
+      githubLabel: 'GitHub',
+      demoLabel: 'ดูตัวอย่าง',
+      linkUnavailable: 'เพิ่มลิงก์โปรเจกต์เพื่อเปิดใช้งานปุ่มนี้',
     },
     skillsSection: {
       heading: 'เครื่องมือที่ใช้',
       title: 'ทักษะ',
     },
     footer: {
-      heading: 'มีไอเดียที่อยากทำให้เป็นจริงไหม?',
-      title: 'มาสร้างสิ่งที่มีประโยชน์ไปด้วยกัน',
+      heading: 'ติดต่อ',
+      title: 'มาสร้างสิ่งดี ๆ ร่วมกัน',
+      description: 'เปิดรับโอกาสงานประจำและงานฟรีแลนซ์ ติดต่อมาได้เลยครับ โดยปกติผมจะตอบกลับภายในหนึ่งวัน',
+      resumeLabel: 'เรซูเม่',
       copyright: 'สร้างด้วยความใส่ใจ',
       backToTop: 'กลับขึ้นด้านบน',
       backToTopLabel: 'กลับขึ้นด้านบน',

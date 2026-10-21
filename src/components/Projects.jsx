@@ -397,12 +397,7 @@ function Projects() {
                   src={project.images[0]}
                 />
               </button>
-              <button
-                aria-haspopup="dialog"
-                className="project-card-body"
-                onClick={(event) => openProject(index, event)}
-                type="button"
-              >
+              <div className="project-card-body">
                 <span className="project-number">0{index + 1}</span>
                 <span className="project-card-title">{project.title}</span>
                 <span className="project-card-description">{project.description}</span>
@@ -411,10 +406,56 @@ function Projects() {
                     <span className="tech-tag" key={tech}>{tech}</span>
                   ))}
                 </span>
-                <span className="project-link">
-                  {projectsSection.viewDetails} <span aria-hidden="true">↗</span>
-                </span>
-              </button>
+                <div className="project-card-actions">
+                  <button
+                    aria-haspopup="dialog"
+                    className="project-link"
+                    onClick={(event) => openProject(index, event)}
+                    type="button"
+                  >
+                    {projectsSection.viewDetails} <span aria-hidden="true">↗</span>
+                  </button>
+                  <div className="project-external-links">
+                    {[
+                      {
+                        label: projectsSection.githubLabel,
+                        href: project.githubUrl,
+                        icon: 'github',
+                        variant: 'project-external-link-github',
+                      },
+                      {
+                        label: projectsSection.demoLabel,
+                        href: project.demoUrl,
+                        icon: 'arrow',
+                        variant: 'project-external-link-demo',
+                      },
+                    ].map(({ label, href, icon, variant }) => (
+                      href ? (
+                        <a
+                          className={`project-external-link ${variant}`}
+                          href={href}
+                          key={label}
+                          rel="noreferrer"
+                          target="_blank"
+                        >
+                          <Icon name={icon} size={17} />
+                          <span>{label}</span>
+                        </a>
+                      ) : (
+                        <span
+                          aria-disabled="true"
+                          className={`project-external-link project-external-link-disabled ${variant}`}
+                          key={label}
+                          title={projectsSection.linkUnavailable}
+                        >
+                          <Icon name={icon} size={17} />
+                          <span>{label}</span>
+                        </span>
+                      )
+                    ))}
+                  </div>
+                </div>
+              </div>
             </article>
           ))}
         </div>
