@@ -106,7 +106,7 @@ const projects = [
       en: 'Developed the ordering experience and connected order events to n8n webhooks, with PostgreSQL supporting order data.',
       th: 'พัฒนาประสบการณ์การสั่งอาหารและเชื่อมต่อเหตุการณ์คำสั่งซื้อกับ n8n webhooks โดยใช้ PostgreSQL จัดเก็บข้อมูลคำสั่งซื้อ',
     },
-    techStack: ['HTML', 'CSS', 'Tailwind CSS', 'Express', 'PostgreSQL', 'n8n'],
+    techStack: ['HTML', 'Tailwind CSS', 'Express', 'PostgreSQL', 'n8n'],
     imagePresentation: 'portrait',
     images: [
       '/project-shots/FromF1.png',
@@ -134,7 +134,7 @@ const projects = [
   {
     title: { en: 'OrgChat', th: 'OrgChat' },
     githubUrl: 'https://github.com/Coachzas/orgchat-project',
-    demoUrl: '',
+    demoUrl: null,
     description: {
       en: 'A real-time organizational chat platform that brings team conversations and video calls into one shared workspace.',
       th: 'แพลตฟอร์มแชตองค์กรแบบเรียลไทม์ที่รวมการสนทนาของทีมและวิดีโอคอลไว้ในพื้นที่ทำงานเดียวกัน',
@@ -144,7 +144,7 @@ const projects = [
       en: 'Built the application across the React client and Express API, connecting real-time messaging, persistent PostgreSQL data, and Zegocloud calling.',
       th: 'พัฒนาแอปพลิเคชันทั้งฝั่ง React และ Express API เชื่อมต่อการส่งข้อความแบบเรียลไทม์ ฐานข้อมูล PostgreSQL และระบบโทรผ่าน Zegocloud',
     },
-    techStack: ['React', 'Express', 'Socket.IO', 'PostgreSQL', 'Prisma', 'Zegocloud'],
+    techStack: ['React', 'Tailwind CSS', 'Express', 'Socket.IO', 'PostgreSQL', 'Prisma', 'Zegocloud'],
     images: [
       '/project-shots/Message.png',
       '/project-shots/Group.png',
@@ -167,6 +167,52 @@ const projects = [
       ],
     },
   },
+  {
+    title: {
+      en: 'Automated Email & Resume Screening Workflow',
+      th: 'ระบบอัตโนมัติคัดกรองใบสมัครผ่าน n8n',
+    },
+    githubUrl: null,
+    demoUrl: null,
+    description: {
+      en: 'An automated n8n pipeline that monitors incoming candidate emails, extracts resume attachments, parses text content, and leverages AI to score applicants directly into Google Sheets.',
+      th: 'เวิร์กโฟลว์อัตโนมัติบน n8n ดึงอีเมลใบสมัคร สกัดข้อความจากไฟล์แนบ ส่งให้ AI วิเคราะห์ให้คะแนน และบันทึกลง Google Sheets อัตโนมัติ',
+    },
+    role: {
+      en: 'Workflow Automation & AI Integration Developer',
+      th: 'นักพัฒนาระบบอัตโนมัติและการเชื่อมต่อ AI',
+    },
+    contribution: {
+      en: 'Designed an n8n workflow that monitors applicant emails, extracts and parses resume documents, scores candidates with Gemini API, and records results for review.',
+      th: 'ออกแบบเวิร์กโฟลว์บน n8n เพื่อตรวจสอบอีเมลผู้สมัคร ดึงและวิเคราะห์ข้อมูลจากเอกสาร ให้คะแนนผู้สมัครด้วย Gemini API และบันทึกผลเพื่อใช้พิจารณา',
+    },
+    techStack: ['n8n', 'IMAP', 'Gemini API', 'Google Sheets', 'Workflow Automation', 'OCR'],
+    imagePresentation: 'portrait',
+    images: [
+      '/project-shots/WF1.png',
+      '/project-shots/WF2.png',
+      '/project-shots/WF3.png',
+      '/project-shots/WF4.png',
+      '/project-shots/WF5.png',
+      '/project-shots/WF6.png',
+      '/project-shots/WF7.png',
+      '/project-shots/WF8.png',
+    ],
+    features: {
+      en: [
+        'Automated email polling via IMAP node.',
+        'Document parsing and text extraction with OCR for PDF and image attachments.',
+        'AI candidate scoring based on custom job criteria prompts.',
+        'Instant persistence to Google Sheets or a PostgreSQL database.',
+      ],
+      th: [
+        'ตรวจสอบอีเมลใบสมัครโดยอัตโนมัติผ่าน IMAP node',
+        'แยกวิเคราะห์เอกสารและดึงข้อความด้วย OCR จากไฟล์ PDF และรูปภาพ',
+        'ใช้ AI ให้คะแนนผู้สมัครตามเกณฑ์งานที่กำหนดใน prompt',
+        'บันทึกผลลง Google Sheets หรือฐานข้อมูล PostgreSQL ได้ทันที',
+      ],
+    },
+  },
 ];
 
 const sharedData = {
@@ -186,7 +232,7 @@ const sharedData = {
         'n8n',
         'Docker',
         'Gemini API',
-        'Claude AI',
+        'Claude API',
       ],
     },
     {

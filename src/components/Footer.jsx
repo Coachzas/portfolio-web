@@ -63,7 +63,7 @@ function Footer() {
           <a
             className="contact-bento-card contact-resume-card"
             download="Tirawat-Pisut-Resume.pdf"
-            href="/resume.pdf"
+            href="/Tirawat Pisut - Resume (English).pdf"
           >
             <span className="contact-card-icon"><ArrowDownToLine aria-hidden="true" size={21} /></span>
             <span className="contact-card-copy">

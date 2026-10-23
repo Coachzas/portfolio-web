@@ -429,7 +429,7 @@ function Projects() {
                         icon: 'arrow',
                         variant: 'project-external-link-demo',
                       },
-                    ].map(({ label, href, icon, variant }) => (
+                    ].filter(({ href }) => href !== null).map(({ label, href, icon, variant }) => (
                       href ? (
                         <a
                           className={`project-external-link ${variant}`}
